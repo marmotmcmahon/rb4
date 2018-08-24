@@ -1,0 +1,18 @@
+{
+  "generator-plugin-wp": {
+    "name": "RB4 Related Resources",
+    "homepage": "http://themightyengine.com",
+    "description": "A plugin for creating and displaying related resources in the sidebar.",
+    "version": "0.0.1",
+    "author": "Mighty Engine",
+    "authoremail": "web@themightyengine.com",
+    "authorurl": "http://themightyengine.com",
+    "license": "GPLv2",
+    "slug": "rb4-related-resources",
+    "classname": "RB4_Related_Resources",
+    "classprefix": "RB4RR_",
+    "prefix": "rb4_related_resources",
+    "year": 2017,
+    "currentVersionWP": "4.4"
+  }
+}

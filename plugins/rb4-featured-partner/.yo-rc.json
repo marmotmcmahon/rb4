@@ -1,0 +1,18 @@
+{
+  "generator-plugin-wp": {
+    "name": "RB4 Show Seasonal Block",
+    "homepage": "http://themightyengine.com",
+    "description": "Puts the seasonal message from the homepage in the sidebar.",
+    "version": "0.0.1",
+    "author": "Mighty Engine",
+    "authoremail": "web@themightyengine.com",
+    "authorurl": "http://themightyengine.com",
+    "license": "GPLv2",
+    "slug": "rb4-featured-partner",
+    "classname": "rb4_featured_partner",
+    "classprefix": "RB4FP_",
+    "prefix": "rb4_featured_partner",
+    "year": 2017,
+    "currentVersionWP": "4.7.1"
+  }
+}

@@ -1,0 +1,901 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: wpStickies 2.1.0\n"
+"POT-Creation-Date: 2014-07-28 16:11+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.7\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: ./\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../css_editor.php:20
+msgid "wpStickies CSS Editor"
+msgstr ""
+
+#: ../css_editor.php:21 ../media_editor.php:29
+msgid "Back to the list"
+msgstr ""
+
+#: ../css_editor.php:27
+msgid "Your changes has been saved!"
+msgstr ""
+
+#: ../css_editor.php:35
+msgid "Contents of your custom CSS file"
+msgstr ""
+
+#: ../css_editor.php:36
+msgid "Ctrl+Q to fold/unfold a block"
+msgstr ""
+
+#: ../css_editor.php:44
+msgid ""
+"/* You can type here any CSS code that will be loaded both on your admin and "
+"front-end pages."
+msgstr ""
+
+#: ../css_editor.php:46
+msgid "Let us help you by giving a few exmaple CSS classes: */"
+msgstr ""
+
+#: ../css_editor.php:53
+msgid ""
+"You need to make your uploads folder writable before you can save your "
+"changes. See the <a href=\"http://codex.wordpress.org/"
+"Changing_File_Permissions\" target=\"_blank\">Codex</a> for more information."
+msgstr ""
+
+#: ../css_editor.php:55 ../settings.php:522 ../settings.php:836
+#: ../settings.php:873
+msgid "Save changes"
+msgstr ""
+
+#: ../css_editor.php:56
+msgid ""
+"Using bad CSS code could break the appearance of your site. Changes cannot "
+"be reverted after saving."
+msgstr ""
+
+#: ../media_editor.php:28 ../wpstickies.php:570
+msgid "My Media"
+msgstr ""
+
+#: ../media_editor.php:36
+msgid "Show my uploads only"
+msgstr ""
+
+#: ../media_editor.php:38
+msgid "Update"
+msgstr ""
+
+#: ../media_editor.php:44
+msgid "Listing images used in post"
+msgstr ""
+
+#: ../media_editor.php:45
+msgid "Open post in editor"
+msgstr ""
+
+#: ../media_editor.php:46
+msgid "Show all media"
+msgstr ""
+
+#: ../media_editor.php:67
+msgid "Sorry, no uploads found."
+msgstr ""
+
+#: ../settings.php:71 ../wpstickies.php:564
+msgid "wpStickies"
+msgstr ""
+
+#: ../settings.php:75 ../settings.php:95
+msgid "Plugin Settings"
+msgstr ""
+
+#: ../settings.php:76
+msgid "Stickies"
+msgstr ""
+
+#: ../settings.php:77 ../settings.php:721
+msgid "Language"
+msgstr ""
+
+#: ../settings.php:78
+msgid "News & Updates"
+msgstr ""
+
+#: ../settings.php:80
+msgid "Documentation"
+msgstr ""
+
+#: ../settings.php:98 ../settings.php:110
+msgid "General"
+msgstr ""
+
+#: ../settings.php:99 ../settings.php:127
+msgid "Permissions"
+msgstr ""
+
+#: ../settings.php:100
+msgid "Appearance"
+msgstr ""
+
+#: ../settings.php:101
+msgid "Troubleshooting"
+msgstr ""
+
+#: ../settings.php:114
+msgid "Selectors"
+msgstr ""
+
+#: ../settings.php:117
+msgid ""
+"You can apply wpStickies on any content, even on DIVs with background with "
+"the right selector. Please read the documentation for more information about "
+"selectors."
+msgstr ""
+
+#: ../settings.php:121
+msgid "Use relative URLs"
+msgstr ""
+
+#: ../settings.php:123
+msgid ""
+"wpStickies will try to find images locally by ignoring the domain name in "
+"their paths. This option helps if you've moved your site to another server, "
+"but it can also cause problems for images loaded externally."
+msgstr ""
+
+#: ../settings.php:131
+msgid "Allow plugin access to"
+msgstr ""
+
+#: ../settings.php:135
+msgid "Super Admin"
+msgstr ""
+
+#: ../settings.php:137 ../settings.php:191 ../settings.php:235
+msgid "Admins"
+msgstr ""
+
+#: ../settings.php:138 ../settings.php:192 ../settings.php:236
+msgid "Editors, Admins"
+msgstr ""
+
+#: ../settings.php:139 ../settings.php:193 ../settings.php:237
+msgid "Authors, Editors, Admins"
+msgstr ""
+
+#: ../settings.php:140 ../settings.php:194 ../settings.php:238
+msgid "Contributors, Authors, Editors, Admins"
+msgstr ""
+
+#: ../settings.php:141 ../settings.php:198 ../settings.php:241
+msgid "Custom"
+msgstr ""
+
+#: ../settings.php:144
+msgid "You can allow non-administrator users to access wpStickies' admin area."
+msgstr ""
+
+#: ../settings.php:147 ../settings.php:204 ../settings.php:247
+msgid "Custom capability"
+msgstr ""
+
+#: ../settings.php:149 ../settings.php:208 ../settings.php:251
+msgid ""
+"Alternatively, you can provide a custom capability instead of the predefined "
+"roles. <a href=\"http://codex.wordpress.org/Roles_and_Capabilities\" target="
+"\"_blank\">See the Codex</a> for more information."
+msgstr ""
+
+#: ../settings.php:152
+msgid "Allow changing plugin settings"
+msgstr ""
+
+#: ../settings.php:154
+msgid ""
+"Non-administrator users will be able to change plugin settings, including "
+"permission preferences."
+msgstr ""
+
+#: ../settings.php:158 ../settings.php:479
+msgid "Other"
+msgstr ""
+
+#: ../settings.php:162
+msgid "Minimum image width & height"
+msgstr ""
+
+#: ../settings.php:167
+msgid ""
+"Prevent wpStickies to be applied on images with smaller dimensions that you "
+"specify here."
+msgstr ""
+
+#: ../settings.php:171
+msgid "Minimum area width & height"
+msgstr ""
+
+#: ../settings.php:176
+msgid ""
+"Prevent unintentionally adding area tags by specifying the minimum "
+"dimensions that needs to be drawn."
+msgstr ""
+
+#: ../settings.php:184
+msgid "Adding new stickies"
+msgstr ""
+
+#: ../settings.php:188
+msgid "Allow adding stickies to"
+msgstr ""
+
+#: ../settings.php:195 ../settings.php:239
+msgid "wpStickies admins, Admins"
+msgstr ""
+
+#: ../settings.php:196 ../settings.php:240
+msgid "Every registered member"
+msgstr ""
+
+#: ../settings.php:197
+msgid "Every visitor"
+msgstr ""
+
+#: ../settings.php:201
+msgid ""
+"You can control here who can create new sticikes. The \"wpStickies admins\" "
+"group created by the plugin with subscriber permissions."
+msgstr ""
+
+#: ../settings.php:211
+msgid "Pending stickies displayed as"
+msgstr ""
+
+#: ../settings.php:214
+msgid "Visible"
+msgstr ""
+
+#: ../settings.php:215
+msgid "Invisible"
+msgstr ""
+
+#: ../settings.php:218
+msgid "Show or hide pending tags until an administrator approves them."
+msgstr ""
+
+#: ../settings.php:221
+msgid "Auto-accept pending stickies"
+msgstr ""
+
+#: ../settings.php:223
+msgid ""
+"You can bypass the pending list and all the tags will be accepted "
+"automatically."
+msgstr ""
+
+#: ../settings.php:228
+msgid "Modifying stickies"
+msgstr ""
+
+#: ../settings.php:232
+msgid "Allow modifying stickies to"
+msgstr ""
+
+#: ../settings.php:244
+msgid ""
+"You can control here who can modify stickies. Non-administrator users can "
+"only edit their own stickies."
+msgstr ""
+
+#: ../settings.php:254
+msgid "After a modification"
+msgstr ""
+
+#: ../settings.php:257
+msgid "Add sticky to the pending list for re-confirmation"
+msgstr ""
+
+#: ../settings.php:258
+msgid "Treat as confirmed if it was previously approved"
+msgstr ""
+
+#: ../settings.php:259
+msgid "Ignore pending list, approve them automatically"
+msgstr ""
+
+#: ../settings.php:262
+msgid ""
+"Choose an action to be performed after editing tags. You can send modified "
+"stickies for revaluation, treat them as confirmed if they were previously "
+"approved, or just completely ignore the pending list in all cases."
+msgstr ""
+
+#: ../settings.php:271
+msgid "Animation settings"
+msgstr ""
+
+#: ../settings.php:280
+msgid "Direction"
+msgstr ""
+
+#: ../settings.php:281
+msgid "Easing"
+msgstr ""
+
+#: ../settings.php:282
+msgid "Duration"
+msgstr ""
+
+#: ../settings.php:285
+msgid "Mouse enter animation"
+msgstr ""
+
+#: ../settings.php:289 ../settings.php:340
+msgid "fade"
+msgstr ""
+
+#: ../settings.php:290 ../settings.php:341 ../settings.php:469
+msgid "top"
+msgstr ""
+
+#: ../settings.php:291 ../settings.php:342 ../settings.php:471
+msgid "bottom"
+msgstr ""
+
+#: ../settings.php:292 ../settings.php:343 ../settings.php:472
+msgid "left"
+msgstr ""
+
+#: ../settings.php:293 ../settings.php:344 ../settings.php:470
+msgid "right"
+msgstr ""
+
+#: ../settings.php:336
+msgid "Mouse out animation"
+msgstr ""
+
+#: ../settings.php:387
+msgid "Bubble animation"
+msgstr ""
+
+#: ../settings.php:433
+msgid "Delay"
+msgstr ""
+
+#: ../settings.php:435
+msgid ""
+"Delay in milliseconds between the transition of tags to have a parallax-like "
+"effect."
+msgstr ""
+
+#: ../settings.php:439
+msgid "Spot bubble"
+msgstr ""
+
+#: ../settings.php:443
+msgid "Spot bubble direction"
+msgstr ""
+
+#: ../settings.php:446
+msgid "Top"
+msgstr ""
+
+#: ../settings.php:447
+msgid "Right"
+msgstr ""
+
+#: ../settings.php:448
+msgid "Bottom"
+msgstr ""
+
+#: ../settings.php:449
+msgid "Left"
+msgstr ""
+
+#: ../settings.php:452
+msgid "The default position of the spot bubble."
+msgstr ""
+
+#: ../settings.php:455
+msgid "Change bubble direction"
+msgstr ""
+
+#: ../settings.php:457
+msgid ""
+"wpStickies can automatically reposition spot bubbles when there is no enough "
+"free space to display them with the default settings."
+msgstr ""
+
+#: ../settings.php:460
+msgid "Spot bubble distance"
+msgstr ""
+
+#: ../settings.php:462
+msgid "The distance in pixels between the spot and the spot bubble."
+msgstr ""
+
+#: ../settings.php:465
+msgid "Spot buttons position"
+msgstr ""
+
+#: ../settings.php:475
+msgid "The alignment of spot buttons withing the spot bubble."
+msgstr ""
+
+#: ../settings.php:483
+msgid "Show messages"
+msgstr ""
+
+#: ../settings.php:485
+msgid ""
+"Show or hide the built-in notifications with explanatory messages to help "
+"new wpStickies users."
+msgstr ""
+
+#: ../settings.php:488
+msgid "Always visible"
+msgstr ""
+
+#: ../settings.php:490
+msgid ""
+"Disable this option to only show tags when users are hovering over the "
+"images."
+msgstr ""
+
+#: ../settings.php:495
+msgid "Use Google CDN version of jQuery"
+msgstr ""
+
+#: ../settings.php:497
+msgid "This option will likely solve \"Old jQuery\" issues."
+msgstr ""
+
+#: ../settings.php:500
+msgid "Include scripts in the footer"
+msgstr ""
+
+#: ../settings.php:502
+msgid ""
+"Including resources in the footer could decrease load times, and solve other "
+"type of issues, but your theme might not support this method."
+msgstr ""
+
+#: ../settings.php:505
+msgid "Concatenate output"
+msgstr ""
+
+#: ../settings.php:507
+msgid ""
+"Concatenating the plugin's output could solve issues caused by custom "
+"filters your theme might use."
+msgstr ""
+
+#: ../settings.php:510
+msgid "Put JS includes to body"
+msgstr ""
+
+#: ../settings.php:512
+msgid ""
+"This is the most common workaround for jQuery related issues, and is "
+"recommended when you experience problems with jQuery."
+msgstr ""
+
+#: ../settings.php:530
+msgid "Pending"
+msgstr ""
+
+#: ../settings.php:531
+msgid "Latest"
+msgstr ""
+
+#: ../settings.php:532
+msgid "Restore"
+msgstr ""
+
+#: ../settings.php:539
+msgid "Pending stickies"
+msgstr ""
+
+#: ../settings.php:543 ../settings.php:607 ../settings.php:664
+msgid "Preview"
+msgstr ""
+
+#: ../settings.php:544 ../settings.php:608 ../settings.php:665
+msgid "Title / Caption"
+msgstr ""
+
+#: ../settings.php:545 ../settings.php:609 ../settings.php:666
+msgid "Content"
+msgstr ""
+
+#: ../settings.php:546 ../settings.php:610 ../settings.php:667
+msgid "User"
+msgstr ""
+
+#: ../settings.php:547
+msgid "Created"
+msgstr ""
+
+#: ../settings.php:548 ../settings.php:612 ../settings.php:669
+msgid "Actions"
+msgstr ""
+
+#: ../settings.php:569 ../settings.php:633 ../settings.php:690
+msgid "No content"
+msgstr ""
+
+#: ../settings.php:576
+msgid "Unregistered"
+msgstr ""
+
+#: ../settings.php:594
+msgid "There are no pending stickies at the moment."
+msgstr ""
+
+#: ../settings.php:603
+msgid "Latest stickies"
+msgstr ""
+
+#: ../settings.php:611 ../settings.php:668
+msgid "Modified"
+msgstr ""
+
+#: ../settings.php:651
+msgid "No stickes yet."
+msgstr ""
+
+#: ../settings.php:660
+msgid "Restore removed stickies"
+msgstr ""
+
+#: ../settings.php:709
+msgid "There are no removed stickies yet."
+msgstr ""
+
+#: ../settings.php:723
+msgid ""
+"Note: You can translate wpStickies to multiple languages as well, these "
+"fields are shortcode aware, so you can use translation plugins like "
+"qTranslate. You can also use WPML's String Translation module. See the Help "
+"menu on the top right corner of the page for more details."
+msgstr ""
+
+#: ../settings.php:731
+msgid "Default caption text"
+msgstr ""
+
+#: ../settings.php:732
+msgid "add a name or caption"
+msgstr ""
+
+#: ../settings.php:735
+msgid "Default spot title"
+msgstr ""
+
+#: ../settings.php:736
+msgid "Sample Title"
+msgstr ""
+
+#: ../settings.php:739
+msgid "Default spot content"
+msgstr ""
+
+#: ../settings.php:740
+msgid ""
+"You can write here text and you can also use HTML code. For example you can "
+"simply include an image or a link."
+msgstr ""
+
+#: ../settings.php:746
+msgid "Google button"
+msgstr ""
+
+#: ../settings.php:747
+msgid "Google"
+msgstr ""
+
+#: ../settings.php:750
+msgid "Youtube button"
+msgstr ""
+
+#: ../settings.php:751
+msgid "YouTube"
+msgstr ""
+
+#: ../settings.php:754
+msgid "Vimeo button"
+msgstr ""
+
+#: ../settings.php:755
+msgid "Vimeo"
+msgstr ""
+
+#: ../settings.php:758
+msgid "Wikipedia button"
+msgstr ""
+
+#: ../settings.php:759
+msgid "Wikipedia"
+msgstr ""
+
+#: ../settings.php:762
+msgid "Facebook button"
+msgstr ""
+
+#: ../settings.php:763
+msgid "Facebook"
+msgstr ""
+
+#: ../settings.php:769
+msgid "Hover message"
+msgstr ""
+
+#: ../settings.php:770
+msgid ""
+"wpStickies: Click on the image to create a new spot or draw an area to tag "
+"faces."
+msgstr ""
+
+#: ../settings.php:773
+msgid "Spot drag message"
+msgstr ""
+
+#: ../settings.php:774
+msgid ""
+"wpStickies: You can drag this sticky anywhere over the image by taking and "
+"moving the spot."
+msgstr ""
+
+#: ../settings.php:777
+msgid "Area drag message"
+msgstr ""
+
+#: ../settings.php:778
+msgid ""
+"wpStickies: You can drag this sticky anywhere over the image by taking and "
+"moving the area."
+msgstr ""
+
+#: ../settings.php:781
+msgid "Save button message"
+msgstr ""
+
+#: ../settings.php:782
+msgid "wpStickies: SAVE CHANGES"
+msgstr ""
+
+#: ../settings.php:785
+msgid "Remove button message"
+msgstr ""
+
+#: ../settings.php:786
+msgid "wpStickies: REMOVE THIS STICKY"
+msgstr ""
+
+#: ../settings.php:789
+msgid "Reposition button message"
+msgstr ""
+
+#: ../settings.php:790
+msgid "wpStickies: CHANGE THE DIRECTION OF THE BUBBLE"
+msgstr ""
+
+#: ../settings.php:793
+msgid "Color button message"
+msgstr ""
+
+#: ../settings.php:794
+msgid "wpStickies: CHANGE THE COLOR OF THE BUBBLE"
+msgstr ""
+
+#: ../settings.php:797
+msgid "Size button message"
+msgstr ""
+
+#: ../settings.php:798
+msgid "wpStickies: CHANGE THE WIDTH OF THE BUBBLE"
+msgstr ""
+
+#: ../settings.php:804
+msgid "Save message"
+msgstr ""
+
+#: ../settings.php:805
+msgid "wpStickies: STICKY SAVED"
+msgstr ""
+
+#: ../settings.php:808
+msgid "Remove message"
+msgstr ""
+
+#: ../settings.php:809
+msgid "wpStickies: STICKY REMOVED"
+msgstr ""
+
+#: ../settings.php:812
+msgid "Disable message"
+msgstr ""
+
+#: ../settings.php:813
+msgid "Disable wpStickies on this image"
+msgstr ""
+
+#: ../settings.php:816
+msgid "Remove confirmation message"
+msgstr ""
+
+#: ../settings.php:817
+msgid ""
+"wpStickies: You clicked to remove this sticky. If you confirm, it will be "
+"permanently removed from the database. Are you sure?"
+msgstr ""
+
+#: ../settings.php:820
+msgid "Remove error message"
+msgstr ""
+
+#: ../settings.php:821
+msgid ""
+"wpStickies: The following error occurred during remove: You don't have "
+"permission to remove this sticky!"
+msgstr ""
+
+#: ../settings.php:824
+msgid "Create error message"
+msgstr ""
+
+#: ../settings.php:825
+msgid ""
+"wpStickies: The following error occurred during save: You don't have "
+"permission to create new stickies!"
+msgstr ""
+
+#: ../settings.php:828
+msgid "Modify error message"
+msgstr ""
+
+#: ../settings.php:829
+msgid ""
+"wpStickies: The following error occurred during save: You don't have "
+"permission to modify this sticky!"
+msgstr ""
+
+#: ../settings.php:848
+msgid "Auto-updates"
+msgstr ""
+
+#: ../settings.php:854
+msgid "Purchase code:"
+msgstr ""
+
+#: ../settings.php:858
+msgid "Release channel:"
+msgstr ""
+
+#: ../settings.php:860
+msgid "Stable"
+msgstr ""
+
+#: ../settings.php:861
+msgid ""
+"Although pre-release versions should be fine, they might contain unknown "
+"issues, and are not recommended for sites in production."
+msgstr ""
+
+#: ../settings.php:862
+msgid "Beta"
+msgstr ""
+
+#: ../settings.php:867
+msgid ""
+"To receive auto-updates, you need to enter your item purchase code. You can "
+"find it on your CodeCanyon downloads page, just click on the Download button "
+"and choose the \"Licence Certificate\" option. This will download a text "
+"file that contains your purchase code."
+msgstr ""
+
+#: ../settings.php:877 ../wpstickies.php:433
+msgid "Thank you for purchasing wpStickies."
+msgstr ""
+
+#: ../settings.php:878 ../wpstickies.php:414 ../wpstickies.php:433
+msgid "Check for update"
+msgstr ""
+
+#: ../settings.php:881 ../wpstickies.php:438
+msgid "Your purchase code doesn't appear to be valid."
+msgstr ""
+
+#: ../settings.php:893
+msgid "wpStickies News"
+msgstr ""
+
+#: ../settings.php:895
+msgid "Filter:"
+msgstr ""
+
+#: ../settings.php:897
+msgid "All"
+msgstr ""
+
+#: ../settings.php:898
+msgid "Announcements"
+msgstr ""
+
+#: ../settings.php:899
+msgid "Release log"
+msgstr ""
+
+#: ../settings.php:900
+msgid "Beta versions"
+msgstr ""
+
+#: ../settings.php:903
+msgid "You have version"
+msgstr ""
+
+#: ../settings.php:903
+msgid "installed"
+msgstr ""
+
+#: ../wpstickies.php:271
+msgid "Update available for wpStickies!"
+msgstr ""
+
+#: ../wpstickies.php:273
+#, php-format
+msgid "You have version %1$s. Update to version %2$s."
+msgstr ""
+
+#: ../wpstickies.php:276
+msgid "Review changes & Install"
+msgstr ""
+
+#: ../wpstickies.php:288
+msgid "The new version of wpStickies is almost ready"
+msgstr ""
+
+#: ../wpstickies.php:290
+#, php-format
+msgid ""
+"wpStickies 2.1.0 is a huge update with lots of new features and "
+"improvements. While we have targeted 100% compatibility with older versions, "
+"unfortunately there are some areas where this was not possible. As a result, "
+"we have reseted the options dealing with user permissions, and are asking "
+"you to review your plugin settings again. If you have updated via FTP, a "
+"pluign re-activation may also be needed."
+msgstr ""
+
+#: ../wpstickies.php:292
+msgid "Okay, I understand"
+msgstr ""
+
+#: ../wpstickies.php:414
+msgid "Your settings were successfully saved."
+msgstr ""
+
+#: ../wpstickies.php:575
+msgid "CSS Editor"
+msgstr ""
+
+#: ../wpstickies.php:687
+msgid "You don't have permission to change plugin settings!"
+msgstr ""
+
+#: ../wpstickies.php:750
+msgid ""
+"It looks like your files isn't writable, so PHP couldn't make any changes "
+"(CHMOD)."
+msgstr ""
+
+#: ../wpstickies.php:750
+msgid "Cannot write to file"
+msgstr ""

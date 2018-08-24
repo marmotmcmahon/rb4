@@ -1,0 +1,30 @@
+<h3>Translating the plugin's user interface without a 3rd party solution</h3>
+<p>
+	You can find the details about translating the plugin's user interface in the documentation
+	that's included in the package you've downloaded from CodeCanyon.
+</p>
+
+<h3>Creating multilingual tags with qTranslate</h3>
+<p>
+	qTranslate is the most easiest way to use multilingual contents in wpStickies. It is a free and simple plugin that supports a shortcode-like syntax to enter text in multiple languages, so it can display the proper one for your visitors. wpStickies supports shortcodes and other special syntaxes in its language strings and spot fields, so you can enter something like this to make multilingual tags:
+
+	<pre>[:en]English text[:de]German text</pre>
+
+	The line above will output “English text” if the visitor selected an English page and “German text” if the visitor selected German. You can read more about qTranslate on their homepage.
+</p>
+
+<h3>Translating with the WPML plugin</h3>
+<div>
+	You need a "Multilingual CMS" version of WPML with installed WPML String Translation add-on.<br><br>
+
+	<strong>Translating the plugin's user interface:</strong>
+	<ul>
+		<li>Navigate WPML -> Theme and plugins localization</li>
+		<li>Select "Translate by WPML" option in "Select how to localize the theme" section.</li>
+		<li>In the newly appeared list of plugins, select wpStickies and click "Scan selected plugins for strings" button.</li>
+		<li>Under WPML -> String translation menu item, you can now see and edit the texts that wpStickies uses.</li>
+	</ul><br>
+
+	<strong>Creating multilingual tags:</strong>
+	<p>wpStickies registers translatable contents when you save your work. If you have used wpStickies before, you may need to re-save your already existing tags, even if you won't change anything. Once wpStikcies has registered their translatable contents, they will appear under the WPML -> String translation menu item in your WP admin sidebar.</p>
+</div>

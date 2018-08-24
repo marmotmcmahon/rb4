@@ -1,0 +1,43 @@
+<h3>What are the selectors?</h3>
+<p>
+	The selectors are patterns for selecting elements that you want to work with.
+	wpStickies works on images inserted with the WP post/page editor automatically. This
+	is also achieved with selectors. Specifying a new selector will allow you to apply
+	wpStickies on your custom images or even HTML elements with background. You can also
+	use selectors to prevent wpStickies applying on your images you don't want to.
+</p>
+
+<h3>How selectors works?</h3>
+<p>
+	To understand how the selectors works, you need some web development experience,
+	especially with the HTML DOM structure. The most basic selectors are using namespaces,
+	the HTML element names. For example, in HTML, you can insert an image with the &lt;img&gt;
+	element. In selectors, you can use the "img" selector to apply wpStickies on every
+	images. You can reference elements with a specific class name with a dot at the beginning
+	of your selector. For example: ".wpstickies". To reference an element with an ID, you can
+	use the hash mark: "#customid". These are the basics of the selectors.<br><br>
+
+	You can pile up these selectors for more accourate results. For example, if you want to
+	apply wpStickies on images, which are inside HTML elements with class name "entry", you can use the following:
+	".entry img". If you have a main content area that holds all your content and has an ID "content", you can
+	extend our example selector for a more accurate results: "#content .entry img".
+</p>
+
+<h3>So, how can I find all the selectors?</h3>
+<p>
+	We are using the selector engine of jQuery, so you can find all the available selectors
+	on <a href="http://api.jquery.com/category/selectors/" target="_blank">this</a> page.
+</p>
+
+<h3>How can I prevent wpStickies applying on images I don't want?</h3>
+<p>
+	Of course, you can do this with selectors. jQuery supports a very special
+	selector for this, you can find all the details <a href="http://api.jquery.com/not-selector/" target="_blank">here</a>.
+</p>
+
+<h3>What if I don't understand any of this?</h3>
+<p>
+	That's okay, this help entry is made for users with some web development experience.
+	If you have any questions or you want to modify the behavior of wpStickis that involves
+	selectors, you can email us from our <a href="http://codecanyon.net/user/kreatura" target="_blank">CodeCanyon profile page</a>.
+</p>

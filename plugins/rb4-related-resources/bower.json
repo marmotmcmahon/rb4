@@ -1,0 +1,18 @@
+{
+  "name": "rb4-related-resources",
+  "description": "A plugin for creating and displaying related resources in the sidebar.",
+  "license": "GPLv2",
+  "authors": [
+    "Mighty Engine"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  }
+}

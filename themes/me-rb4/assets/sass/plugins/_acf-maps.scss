@@ -1,0 +1,116 @@
+//--------------------------------------------------------------
+// ACF Maps
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Page Title
+//-----------------------------------------
+body.page-template-template-map {
+
+	.entry-title {
+		display: inline-block;
+	} // entry-title
+} // body.page-template-template-map
+
+//-----------------------------------------
+// Map Container
+//-----------------------------------------
+.acf-map {
+	@include transition(opacity 0.3s ease-in);
+
+	clear: both;
+	margin-bottom: rem(50);
+	min-height: 75vh;
+	opacity: 0;
+	visibility: hidden;
+
+	body.ready & {
+		opacity: 1;
+		visibility: visible;
+	} // body.ready &
+} // .acf-map
+
+
+//-----------------------------------------
+// Google Map Rendered Elements
+//-----------------------------------------
+.gm-style-iw {
+	left: 0 !important;
+	overflow: visible !important;
+	top: 0 !important;
+	width: rem(252) !important;
+
+	& > div {
+		max-height: rem(5000) !important;
+		max-width: rem(5000) !important;
+		overflow: visible !important;
+
+		// featured image
+		.attachment-map-image {
+			@include size(rem(252) auto);
+		} // .attachment-map-image
+	} // & > div
+
+	// marker info
+	.info {
+		@include padding(rem(15) rem(15) 0);
+
+		display: inline-block;
+		font-size: rem(14);
+
+		// links
+		a {
+			color: $color-fountain-blue;
+			font-weight: 400;
+		} // a
+
+		// h4
+		h4 {
+			color: $color-butterfly-blush;
+			font-size: rem(20);
+			line-height: 1;
+			margin-bottom: rem(10);
+		} // h4
+
+		address {
+			margin-bottom: rem(5);
+		} // address
+	} // .info
+} // .gm-style-iw
+
+
+//-----------------------------------------
+// Map Key
+//-----------------------------------------
+.map-key {
+	@include margin(rem(15) 0);
+
+	display: inline-block;
+	text-align: right;
+	width: 100%;
+
+	@include media($tablet-landscape) {
+		@include margin(0 0 rem(15));
+	}
+
+	ul {
+		@include list-reset;
+
+		li {
+			@include margin(0 rem(10) 0 0);
+
+			color: $color-cherry-pie;
+			display: inline;
+
+			img {
+				@include margin(0 rem(5) 0 0);
+				@include position(relative, null null rem(-4) null);
+				@include size(rem(15) rem(20));
+			} // img
+
+			&:last-child {
+				margin-right: 0;
+			} // &:last-child
+		} // li
+	} // ul
+} // .map-key

@@ -1,0 +1,80 @@
+//--------------------------------------------------------------
+// Site Content
+//--------------------------------------------------------------
+
+//--------------------------------------------------------------
+// Posts and Pages
+//--------------------------------------------------------------
+
+// Sticy and Comments Link
+.sticky,
+.comments-link {
+	display: block;
+} // .sticky, .comments-link
+
+// blog post articles
+.blog-post-article {
+	margin-bottom: rem(50);
+
+	&:last-child {
+		margin-bottom: 0;
+	} // &:last-child
+} // .blog-post-article
+
+// Byline and update post date
+.byline,
+.updated:not(.published) {
+	display: none;
+} // .byline, .updated:not(.published)
+
+// Byline for single and group
+.single .byline,
+.group-blog .byline {
+	display: inline;
+} // .single .byline, .group-blog .byline
+
+// Page content, entry content and entry summary
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: rem(24) 0 0;
+} // .page-content, .entry-content, .entry-summary
+
+// Page links
+.page-links {
+	clear: both;
+	margin: 0 0 rem(24) 0;
+} // .page-links
+
+// Page Titles
+.page-title {
+	margin-bottom: rem(25);
+
+	@include media($tablet-landscape) {
+		margin-bottom: rem(40);
+	}
+} // .page-title
+
+// Asides
+.blog .format-aside .entry-title,
+.archive .format-aside .entry-title {
+	display: none;
+} // .blog .format-aside .entry-title, .archive .format-aside .entry-title
+
+
+//-----------------------------------------
+// Index Thumbnails
+//-----------------------------------------
+body.blog {
+
+	.entry-content {
+
+		img {
+			@include margin(0 rem(15) 0 0);
+			@include size(rem(50));
+
+			border-radius: rem(50);
+			float: left;
+		} // img
+	} // .entry-content
+} // body.blog

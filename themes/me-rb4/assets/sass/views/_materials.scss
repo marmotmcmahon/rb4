@@ -1,0 +1,73 @@
+//--------------------------------------------------------------
+// Materials Single
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Containers
+//-----------------------------------------
+.single-material-container {
+	@include padding(0 0 rem(40));
+
+	// main content
+	.material-focus {
+		@include fill-parent;
+
+		@include media($tablet-portrait) {
+			@include span-columns(9);
+		}
+	} // .material-focus
+
+	// sidebar
+	.material-sidebar {
+		@include fill-parent;
+
+		@include media($tablet-portrait) {
+			@include span-columns(3);
+		}
+	} // .material-sidebar
+} // .single-material-container
+
+
+//-----------------------------------------
+// Header
+//-----------------------------------------
+.material-title {
+	@include padding(rem(30));
+	@include margin(0 0 rem(40));
+	@include size(100% rem(250));
+
+	align-items: flex-end;
+	background-color: $color-sea-buckthorn;
+	border-radius: rem(20);
+	color: $color-white;
+	display: flex;
+	position: relative;
+
+	.back-to-stuff {
+		@include position(absolute, rem(35) null null rem(40));
+
+		a {
+			color: $color-white;
+
+			&:visited {
+				color: $color-white;
+			} // &:vistited
+		} // a
+	} // .back-to-stuff;
+
+	.material-type-download & {
+		background-color: $color-butterfly-blush;
+	}
+
+	.material-type-request &,
+	.material-type-apply & {
+		background-color: $color-fountain-blue;
+	}
+
+	// heading
+	h1 {
+		@include margin(0);
+
+		color: $color-white;
+	} // h1
+} // .material-title

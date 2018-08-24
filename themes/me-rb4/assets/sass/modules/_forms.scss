@@ -1,0 +1,136 @@
+//--------------------------------------------------------------
+// Forms
+//--------------------------------------------------------------
+form {
+	@include margin(0 0 rem(25) 0);
+} // form
+
+button,
+input,
+select,
+textarea {
+	font-size: 100%; // Corrects font size not being inherited in all browsers
+	margin: 0; // Addresses margins set differently in IE6/7, F3/4, S5, Chrome
+	vertical-align: baseline; // Improves appearance and consistency in all browsers
+} // button, input, select, textarea
+
+// Addresses excess padding in IE8/9
+input[type="checkbox"],
+input[type="radio"] {
+	padding: 0;
+} // input[type="checkbox"], input[type="radio"]
+
+// Remove the clear x icon in IE
+input[type="text"]::-ms-clear,
+input[type="search"]::-ms-clear {
+	display: none;
+} // input[type="text"]::-ms-clear, input[type="search"]::-ms-clear
+
+input[type="search"] {
+	-webkit-appearance: textfield; // Addresses appearance set to searchfield in S5, Chrome
+	box-sizing: content-box;
+
+	// Corrects inner padding displayed oddly in S5, Chrome on OSX
+	&::-webkit-search-decoration {
+		-webkit-appearance: none;
+	} // &::-webkit-search-decoration
+} // input[type="search"]
+
+// Corrects inner padding and border displayed oddly in FF3/4
+// www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+} // button::-moz-focus-inner, input::-moz-focus-inner
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	appearance: none;
+	border: rem(1) solid $color-input-border;
+	border-radius: rem(5);
+	color: $color-input-text;
+	line-height: 1.5;
+	padding: $padding-input;
+
+	&:focus {
+		color: $color-input-focus-text;
+	} // &:focus
+} // input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="number"], input[type="tel"], input[type="range"], input[type="date"], input[type="month"], input[type="week"], input[type="time"], input[type="datetime"], input[type="datetime-local"], input[type="color"], textarea
+
+textarea {
+	@include size(100% auto);
+
+	overflow: auto; // Removes default vertical scrollbar in IE6/7/8/9
+	vertical-align: top; // Improves readability and alignment in all browsers
+} // textarea
+
+
+//-----------------------------------------
+// Theme-Specific Tweaks & Helper Classes
+//-----------------------------------------
+form {
+
+	&.with-input {
+
+		// search inputs
+		input[type="password"],
+		input[type="text"] {
+			@include margin(0 0 0 0);
+
+			border-bottom-right-radius: 0;
+			border-top-right-radius: 0;
+			width: calc(100% - 6.25rem); // rem(100);
+
+			.widget_search & {
+				@include margin(0 rem(-5) 0 0);
+			} // .widget_search &
+		} // input[type="text"], input[type="password"]
+
+		// text fields
+		input[type="text"] {
+			float: left;
+			width: calc(100% - 6.25rem); // rem(100);
+		} // input[type="text"]
+
+		// password fields
+		input[type="password"] {
+			width: calc(100% - 10.3125rem); // rem(165);
+		} // input[type="password"]
+
+		// search button
+		button,
+		input[type="button"],
+		input[type="reset"],
+		input[type="submit"] {
+			border-bottom-left-radius: 0;
+			border-top-left-radius: 0;
+			height: rem(46);
+		} // button, input[type="button"], input[type="reset"], input[type="submit"], input[type="password"]
+
+		button,
+		input[type="button"],
+		input[type="reset"], {
+			width: rem(100);
+		} // button, input[type="button"], input[type="reset"], input[type="submit"]
+
+		// input submit
+		input[type="submit"] {
+			width: rem(165);
+		} // input[type="submit"]
+	} // &.with-input
+} // form

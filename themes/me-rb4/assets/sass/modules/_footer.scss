@@ -1,0 +1,119 @@
+//--------------------------------------------------------------
+// Footer
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Footer Container
+//-----------------------------------------
+.site-footer {
+	@include clearfix;
+	@include padding(rem(30) rem(15))
+
+	background-color: $color-gallery;
+	border-top: rem(1) solid $color-mercury;
+
+	@include media($tablet-large) {
+		@include padding(rem(30) rem(50));
+	}
+
+	.site-info {
+		@include fill-parent;
+		@include margin(rem(25) 0 0);
+
+		color: $color-fountain-blue;
+		float: right;
+		font-size: rem(14);
+		text-align: center;
+
+		@include media($tablet-portrait) {
+			@include margin(0);
+			@include span-columns(4);
+
+			line-height: rem(27);
+			text-align: right;
+		}
+
+		@include media($tablet-landscape) {
+			line-height: rem(29);
+		}
+
+		// ME Link
+		a {
+			color: $color-fountain-blue;
+			text-decoration: none;
+		} // a
+	} // .site-info
+} // .site-footer
+
+
+//-----------------------------------------
+// Footer Navigation
+//-----------------------------------------
+.footer-navigation {
+	@include fill-parent;
+
+	@include media($tablet-portrait) {
+		@include span-columns(8);
+	}
+
+	ul {
+		@include list-reset();
+
+		line-height: 1.5;
+		margin-top: rem(3);
+		text-align: center;
+
+		@include media($tablet-portrait) {
+			text-align: left;
+		}
+
+		li {
+			@include margin(0 0 rem(10) 0);
+
+			display: block;
+
+			@include media($tablet-portrait) {
+				@include margin(0 rem(20) 0 0);
+
+				display: inline-block;
+			}
+
+			&:last-child {
+				@include margin(0);
+			} // &:last-child
+
+			a {
+				@include font(regular);
+
+				color: $color-butterfly-blush;
+				font-size: rem(16);
+
+				// icons
+				svg {
+					@include size(rem(24));
+
+					fill: $color-butterfly-blush;
+					vertical-align: bottom;
+				} // svg
+			} // a
+
+			&.social {
+				@include margin(0 rem(10) rem(10) 0);
+
+				display: inline-block;
+
+				@include media($tablet-portrait) {
+					@include margin(0 rem(10) 0 0);
+				}
+
+				&:nth-child(3) {
+					@include margin(0 0 rem(10) 0);
+
+					@include media($tablet-portrait) {
+						@include margin(0 rem(20) 0 0);
+					}
+				} // &:nth-child(3)
+			} // &.social
+		} // li
+	} // ul
+} // .footer-navigation

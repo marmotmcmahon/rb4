@@ -1,0 +1,131 @@
+//--------------------------------------------------------------
+// Featured Hero
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Container
+//-----------------------------------------
+.rb4-featured-partner {
+	padding: 0;
+} // .rb4-show-seasonal-block-rb4
+
+
+//-----------------------------------------
+// Widget
+//-----------------------------------------
+.featured-partner-widget {
+	@include clearfix;
+
+	align-items: stretch;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+
+	@include media($tablet-landscape) {
+		flex-direction: row;
+	}
+
+	// individual elements
+	.featured-partner {
+		@include padding(rem(25));
+
+		border-radius: rem(15);
+		box-sizing: border-box;
+		color: $color-white;
+		position: relative;
+		width: 100%;
+
+		@include media($tablet-landscape) {
+			@include padding(rem(45));
+
+			width: auto;
+		}
+		// Transparent overlay (optional).
+		&::after {
+			@include position(absolute, 0 0 null null);
+			@include size(100% 100%);
+
+			border-radius: rem(15);
+			content: "";
+			z-index: 2;
+		} // &:after
+
+		.section-title {
+			@include font(bold);
+
+			font-size: rem(24);
+			text-transform: uppercase;
+		}
+
+		// float to bottom containers
+		.float-to-bottom {
+			@include position(relative, null null null null);
+
+			z-index: 8;
+		} // .float-to-bottom
+
+		// titles
+		h2 {
+			color: $color-white;
+			font-size: rem(36);
+			line-height: rem(38);
+			margin-bottom: rem(16);
+			text-transform: uppercase;
+
+			@include media($tablet-portrait) {
+				font-size: rem(48);
+				line-height: rem(48);
+			}
+
+			&.large {
+				font-size: rem(36);
+				line-height: rem(42);
+
+				@include media($tablet-portrait) {
+					font-size: rem(56);
+					line-height: rem(62);
+				}
+			} // &.large
+		} // h2
+
+		a {
+			color: $color-white;
+			text-decoration: none;
+		} // a
+
+		p {
+			@include margin(0);
+		} // p
+
+		.seasonal-content {
+			position: relative;
+			z-index: 10;
+		} // .seasonal-content
+
+		// medium message
+		&.message-medium {
+			@include fill-parent;
+			@include font(bold);
+			@include margin(0);
+
+			background-color: $color-butterfly-blush;
+			text-align: left;
+
+			// Transparent overlay (optional).
+			&::after {
+				background-color: rgba($color-butterfly-blush, 0.6);
+			} // &::after
+
+			a {
+				font-size: rem(18);
+
+				&:active,
+				&:hover,
+				&:focus {
+					opacity: 1;
+				} // &:active, &:hover, &:focus
+			} // a
+		} // &-.message-large
+
+	} // .seasonal-message
+} // .seasonal-widget

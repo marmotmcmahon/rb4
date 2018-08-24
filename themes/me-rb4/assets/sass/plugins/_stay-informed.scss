@@ -1,0 +1,26 @@
+//--------------------------------------------------------------
+// Stay Informed Widget
+//--------------------------------------------------------------
+.rb4-stay-informed {
+	background-color: $color-fountain-blue;
+
+	.widget-title {
+		@include font(bold);
+		
+		font-size: rem(36);
+		margin-bottom: rem(5);
+		text-transform: uppercase;
+	} // .widget-title
+
+	a {
+		color: $color-white;
+		text-decoration: underline;
+	} // a
+
+	p {
+
+		&:last-child {
+			margin-bottom: 0;
+		} // p:last-child
+	} // p
+} //

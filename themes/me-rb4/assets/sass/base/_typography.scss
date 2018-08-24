@@ -1,0 +1,220 @@
+//--------------------------------------------------------------
+// Typography
+//--------------------------------------------------------------
+body,
+html {
+	@include font-smoothing();
+} // body/html
+
+body,
+button,
+input,
+select,
+textarea {
+	color: $color-text-main;
+	font-family: $font-sans;
+	line-height: $line-height-body;
+} // body, button, input, select, textarea
+
+//--------------------------------------------------------------
+// Headers
+//--------------------------------------------------------------
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+	@include margin(0 0 rem(5) 0);
+
+	& a {
+		text-decoration: none;
+	} // & a
+} // headings
+
+h1,
+.h1 {
+	$color1: $color-cherry-pie;
+
+	color: $color1;
+	font-size: rem(56);
+	line-height: rem(62);
+	margin-bottom: rem(48);
+
+	& a {
+		color: $color1;
+	} // a
+} // h1, .h1
+
+h2,
+.h2 {
+	$color2: $color-deep-carrot-orange;
+
+	color: $color2;
+	font-size: rem(44);
+	line-height: rem(48);
+
+	& a {
+		color: $color2;
+	} // a
+} // h2, .h2
+
+h3,
+.h3 {
+	$color3: $color-butterfly-blush;
+
+	@include font(medium);
+
+	color: $color3;
+	font-size: rem(32);
+	line-height: rem(36);
+
+	& a {
+		color: $color3;
+	} // a
+} // h3, .h3
+
+h4,
+.h4 {
+	$color4: $color-mineshaft;
+
+	color: $color4;
+	font-size: rem(24);
+	line-height: rem(30);
+
+	& a {
+		color: $color4;
+	} // a
+} // h4, .h4
+
+h5,
+.h5 {
+	$color5: $color-sea-buckthorn;
+
+	color: $color5;
+	font-size: rem(22);
+	line-height: rem(28);
+
+	& a {
+		color: $color5;
+	} // a
+}  // h5, .h5
+
+h6,
+.h6 {
+	$color6: $color-black;
+
+	color: $color6;
+	font-size: rem(16);
+	line-height: $line-height-body;
+
+	& a {
+		color: $color6;
+	} // a
+} // h6, .h6
+
+//--------------------------------------------------------------
+// Copy
+//--------------------------------------------------------------
+
+p {
+	margin: 0 0 rem(24) 0;
+} // p
+
+b,
+strong {
+	font-weight: 700;
+} // b, strong
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+} // dfn, cite, em, i
+
+blockquote,
+q {
+	margin: 0 rem(24);
+	quotes: "" "";
+
+	&::before,
+	&::after {
+		content: "";
+	}  // &::before, &::after
+} // blockquote, q
+
+address {
+	margin: 0 0 rem(24) 0;
+} // address
+
+pre {
+	font-family: $font-pre;
+	font-size: rem(15);
+	line-height: $line-height-pre;
+	margin: 0 0 rem(24);
+	max-width: 100%;
+	overflow: auto;
+	padding: rem(24);
+} // pre
+
+code,
+kbd,
+tt,
+var {
+	font-family: $font-code;
+	font-size: rem(15);
+} // code, kbd, tt, var
+
+abbr,
+acronym {
+	border-bottom: 1px dotted $color-border-abbr;
+	cursor: help;
+} // abbr, acronym
+
+mark,
+ins {
+	text-decoration: none;
+} // mark, ins
+
+sup,
+sub {
+	font-size: 75%;
+	height: 0;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+} // sup, sub
+
+sup {
+	bottom: 1ex;
+} // sup
+
+sub {
+	top: 0.5ex;
+} // sub
+
+small {
+	font-size: 75%;
+} // small
+
+big {
+	font-size: 125%;
+} // big
+
+// Word Wrapping
+.entry-title,
+.entry-content,
+.comments-title,
+.comment-content,
+.widget-title,
+.widget {
+	@include word-break;
+} // .entry-title, .entry-content, .comments-title, .comment-content, .widget-title, .widget

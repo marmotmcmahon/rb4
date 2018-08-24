@@ -1,0 +1,126 @@
+//--------------------------------------------------------------
+// Portal Page
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Logged Out
+//-----------------------------------------
+.password-protected {
+	@include clearfix;
+
+	min-height: 55vh;
+	position: relative;
+
+	.new-password-proteded-form {
+		@include margin(rem(50) 0);
+		@include size(100% auto);
+
+		@include media($phone-landscape) {
+			@include margin(0 0 rem(50) 0);
+			@include size(rem(500) rem(162));
+		}
+
+		label {
+			@include position(absolute, 0 null null 0);
+
+			text-indent: -9999em;
+			visibility: hidden;
+		} // label
+
+		// Welcome message
+		h2 {
+			@include font(regular);
+
+			color: $color-sea-buckthorn;
+			font-size: rem(32);
+			line-height: rem(36);
+
+			@include media($tablet-portrait) {
+				font-size: rem(44);
+				line-height: rem(48);
+			}
+		} // h2
+
+		.message {
+			@include font(regular);
+			@include margin(0 0 rem(15) 0);
+
+			color: $color-deep-carrot-orange;
+			display: block;
+			font-size: rem(18);
+			line-height: rem(22);
+
+			@include media($tablet-portrait) {
+				font-size: rem(24);
+				line-height: rem(28);
+			}
+		} // .message
+	} // .new-password-proteded-form
+} // .password-protected
+
+
+//-----------------------------------------
+// Child Navigation + Header
+//-----------------------------------------
+.portal {
+
+	// header
+	.entry-header {
+		@include margin(0 0 rem(50) 0);
+
+		display: block;
+
+		// page title
+		.entry-title {
+			display: inline;
+		} // h1.entry-title
+
+		// page navigation
+		.portal-navigation {
+			@include margin(0 0 rem(20) 0);
+
+			display: inline-block;
+
+			@include media($wp-admin-bar) {
+				@include margin(rem(30) 0 0 0);
+
+				width: 100%;
+			}
+
+			ul {
+				@include list-reset;
+
+				text-align: left;
+
+				li {
+					@include margin(0 rem(10) rem(10) 0);
+
+					display: inline-block;
+
+					@include media($wp-admin-bar) {
+						@include margin(0 0 0 rem(10));
+					}
+
+					&:first-child {
+						@include margin(0 0 0 0);
+					} // &:lastchild
+
+					// current page
+					&.current_page_item {
+						color: $color-fountain-blue;
+						font-weight: bold;
+
+						a {
+							color: $color-fountain-blue;
+						} // a
+					} // &.current_page_item
+
+					a {
+						color: $color-butterfly-blush;
+						text-decoration: none;
+					} // a
+				} // li
+			} // ul
+		} // .portal-navigation
+	} // .post-password-protected
+} // portal

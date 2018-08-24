@@ -1,0 +1,195 @@
+//--------------------------------------------------------------
+// Ninja Forms
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Required Info
+//-----------------------------------------
+.nf-form-fields-required {
+	margin-bottom: rem(25);
+} // .nf-form-fields-required
+
+
+//-----------------------------------------
+// Labels
+//-----------------------------------------
+.nf-field-label {
+
+	label {
+		font-weight: normal;
+	} // label
+} // .nf-field-label label
+
+.label-above {
+
+	.nf-field-label {
+		margin-bottom: rem(3) !important;
+	} // .nf-field-label
+} // .label-above .nf-field-label
+
+
+//-----------------------------------------
+// Widgets
+//-----------------------------------------
+.widget_ninja_forms_widget {
+	background-color: $color-fountain-blue;
+
+	.widget-title {
+		margin-bottom: 0;
+	} // .widget-title
+
+	// hide this
+	.nf-before-form-content {
+		height: 0 !important;
+		overflow: hidden !important;
+	} // nf-before-form-content
+
+	p {
+		margin-bottom: rem(5);
+	} // p
+
+	.field-wrap {
+		height: rem(60);
+	} // .field-wrap
+
+	.email-container {
+		width: calc(100% - 6.65rem) !important; // rem(100);
+
+		input:not([type="button"]) {
+			border-radius: rem(5);
+			border-bottom-right-radius: 0;
+			border-top-right-radius: 0;
+		} // input
+	} // .email-container
+
+	.submit-container {
+		width: rem(106);
+
+		input[type="button"] {
+			box-shadow: none !important;
+			border-bottom-left-radius: 0 !important;
+			border-top-left-radius: 0 !important;
+		} // input
+	} // .submit-container
+} // .widget_ninja_forms_widget
+
+
+//-----------------------------------------
+// Signup Form / Ninja Forms
+//-----------------------------------------
+.signup-form {
+	@include clearfix;
+
+	// hide this
+	.nf-before-form-content {
+		height: 0 !important;
+		overflow: hidden !important;
+	} // nf-before-form-content
+
+	.nf-form-fields-required {
+		margin: 0 !important;
+	} // .nf-form-fields-required
+
+	// .field-element wrapper
+	.email-container {
+		width: calc(100% - 6.25rem); // rem(100);
+	} // .field-element
+
+	// field containers
+	.nf-field-container {
+		clear: none;
+		display: inline;
+		margin: 0;
+	} // .nf-field-container, .nf-field-element, .submit-wrap, .nf-field
+
+	.email-container,
+	.submit-container {
+		float: left;
+	} // .email-container, .submit-container
+
+	p {
+		@include font(medium);
+
+		color: $color-white;
+		font-size: rem(18);
+	} // p
+
+	// search inputs
+	input[type="password"],
+	input[type="email"] {
+		@include margin(0 0 0 0);
+
+		border-bottom-right-radius: 0;
+		border-top-right-radius: 0;
+
+		.widget_search & {
+			@include margin(0 rem(-5) 0 0);
+		} // .widget_search &
+	} // input[type="text"], input[type="password"]
+
+	// search button
+	button,
+	input[type="button"],
+	input[type="reset"],
+	input[type="submit"] {
+		border-bottom-left-radius: 0;
+		border-top-left-radius: 0;
+		height: rem(46);
+	} // button, input[type="button"], input[type="reset"], input[type="submit"], input[type="password"]
+
+	button,
+	input[type="button"],
+	input[type="reset"], {
+		width: rem(100);
+	} // button, input[type="button"], input[type="reset"], input[type="submit"]
+
+	// input submit
+	input[type="submit"] {
+		width: rem(165);
+	} // input[type="submit"]
+} // signup-form
+
+
+//-----------------------------------------
+// Element Button
+//-----------------------------------------
+.submit-container  {
+
+	input[type="button"] {
+		@include font(bold);
+		margin: 0 0 rem(25) 0 !important;
+		padding: rem(15) rem(27) rem(11) !important;
+		transition: all 0.3s ease-in-out;
+
+		background-color: $color-sea-buckthorn !important;
+		border-radius: rem(5) !important;
+		box-shadow: 0 rem(7) $color-deep-carrot-orange !important;
+		color: $color-button-text !important;
+		display: inline-block !important;
+		font-size: rem(15) !important;
+		line-height: 1 !important;
+		text-decoration: none !important;
+		text-transform: uppercase !important;
+
+		// covers buttons with links inside them
+		a {
+			color: $color-white;
+		} // a
+
+		&:visited {
+			color: $color-button-text;
+		} // &:vistied
+
+		&:active,
+		&:hover,
+		&:focus {
+			@include margin(0 0 rem(21) 0);
+			@include padding(rem(17) rem(27) rem(13));
+
+			background-color: darken($color-sea-buckthorn, 5%);
+			box-shadow: 0 rem(3) darken($color-deep-carrot-orange, 15%);
+			color: $color-white;
+			opacity: 1;
+		} // &:active, &:hover, &:focus
+	} // input[type="button"]
+} // .submit-container 

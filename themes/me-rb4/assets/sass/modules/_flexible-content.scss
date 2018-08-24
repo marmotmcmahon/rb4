@@ -1,0 +1,376 @@
+//--------------------------------------------------------------
+// Flexible Content
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Call to Action
+//-----------------------------------------
+.flexible-call-to-action {
+	@include clearfix;
+	@include padding(rem(40));
+	@include transition(opacity 0.3s ease-in);
+
+	display: inline-block;
+	margin-bottom: rem(40);
+	opacity: 0;
+	visibility: hidden;
+
+	@include media($tablet-portrait) {
+		@include padding(rem(25) rem(50));
+
+		display: flex;
+	}
+
+	// window readoy
+	body.ready & {
+		opacity: 1;
+		visibility: visible;
+	} // body.ready &
+
+	.left,
+	.right {
+		display: inline-block;
+		flex-direction: column;
+		justify-content: center;
+
+		@include media($tablet-portrait) {
+			display: flex;
+		}
+
+		// overwrite last p
+		p {
+
+			&:last-child {
+				margin-bottom: 0;
+			} // &:last-child
+		} // p
+	} // .left, .right
+
+	.left {
+		@include fill-parent;
+		@include margin(0 0 rem(30));
+
+		@include media($tablet-portrait) {
+			@include margin(0);
+
+			flex: 1 2 auto;
+		}
+	} // .eft
+
+	.right {
+		@include fill-parent;
+
+		@include media($tablet-portrait) {
+			flex: 2 1 auto;
+			margin-left: rem(50);
+		}
+	} // .right
+} // .flexible-call-to-action
+
+//-----------------------------------------
+// Flexible Image
+//-----------------------------------------
+.flexible-image {
+	height: rem(250);
+	margin-bottom: rem(40);
+
+	@include media($tablet-portrait) {
+		height: rem(500);
+	}
+
+	@include media($desktop) {
+		height: rem(600);
+	}
+} // .flexible-image
+
+
+//-----------------------------------------
+// Flexible Image
+//-----------------------------------------
+.flexible-image {
+	height: rem(250);
+	margin-bottom: rem(40);
+
+	@include media($tablet-portrait) {
+		height: rem(350);
+	}
+
+	@include media($desktop) {
+		height: rem(450);
+	}
+} // .flexible-image
+
+
+//-----------------------------------------
+// Column Width Image
+//-----------------------------------------
+.column-width {
+	margin-bottom: rem(40);
+
+	img {
+		height: auto;
+		width: 100%;
+	} // img
+
+	&.flexible-call-to-action {
+		padding: 0;
+	} // .flexible-call-to-action &
+} // .column-width
+
+
+//-----------------------------------------
+// FAQs
+//-----------------------------------------
+.flexible-faqs {
+	@include clearfix;
+	@include padding(rem(35) 0);
+
+	@include media($tablet-large) {
+		@include padding(rem(70) 0);
+	}
+
+	h2 {
+		display: inline-block;
+		margin-bottom: rem(30);
+		position: relative;
+
+		&::after {
+			@include position(relative, null null null null);
+			@include size(rem(80));
+
+			content: url('assets/images/sprites/bubble1_128.png');
+			display: inline-block;
+			opacity: 0.8;
+			vertical-align: text-top;
+
+			@include media($phone-landscape) {
+				@include position(relative, rem(-15) null null null);
+			}
+		} // &::after
+	} // h2
+
+	// q and a block
+	.question-and-answer {
+		margin-bottom: rem(30);
+
+		&:last-of-type {
+			margin-bottom: 0;
+		} // &:last-child
+
+		// questions.
+		.question {
+			color: $color-sea-buckthorn;
+			font-weight: bold;
+
+			p {
+
+				&:last-child {
+					margin-bottom: 0;
+				} // &:last-child
+			} // p
+		} // .quetion
+
+		.answer {
+
+			p {
+
+				&:last-child {
+					margin-bottom: 0;
+				} // &:last-child
+			} // p
+		} // .answer
+	} // .question-and-answer
+} // .flexible-faqs
+
+
+//-----------------------------------------
+// Flexible Content
+//-----------------------------------------
+.flexible-content {
+	@include clearfix;
+
+	margin-bottom: rem(40);
+
+	// .half
+	.half {
+		@include fill-parent;
+
+		@include media($tablet-portrait) {
+			@include span-columns(6);
+		}
+
+		&:last-child {
+			margin-right: 0;
+		} // &:last-child
+	} // .half
+
+	// .half
+	.third {
+		@include fill-parent;
+
+		@include media($tablet-portrait) {
+			@include span-columns(4);
+		}
+		&:last-child {
+			margin-right: 0;
+		} // &:last-child
+	} // .half
+} // .flexible-content
+
+
+//-----------------------------------------
+// Flip Cards
+//-----------------------------------------
+.flexible-flip-cards {
+	@include clearfix;
+	@include padding(0 0 rem(50));
+
+	.card-container {
+		@include list-reset;
+
+		align-items: stretch;
+		display: flex;
+		flex-flow: column wrap;
+
+		@include media($tablet-portrait) {
+			flex-flow: row wrap;
+		}
+	} // .card-container
+
+	.flip-container {
+		@include clearfix;
+		@include fill-parent;
+		@include padding(0);
+		@include margin(0 0 2.5% 0);
+		@include transition(all 0.2s linear);
+
+		display: flex;
+		perspective: 900px;
+		height: rem(275);
+
+		@include media($tablet-portrait) {
+			@include margin(0 2.5% 0 0);
+
+			width: 31.667%;
+
+			&:nth-child(3){
+				@include margin(0);
+			} // &:nth-child(4)
+		}
+
+		.front,
+		.back {
+			@include padding(rem(15));
+			@include position(absolute, 0 null null null);
+			@include transition(all 0.3s);
+
+			backface-visibility: hidden;
+			border-radius: rem(20);
+			color: $color-white;
+			min-height: 100%;
+			text-align: left;
+			transform-style: preserve3d;
+			width: 100%;
+			z-index: 8;
+		} // .front, .back
+
+		$color-list: $color-fountain-blue $color-sea-buckthorn $color-wattle $color-butterfly-blush;
+
+		// front
+		.front {
+			left: 0;
+			transform: rotateY(0deg);
+
+			// let's give each an overlay.
+			@each $current-color in $color-list {
+
+				$i: index($color-list, $current-color);
+
+				&.front-#{$i} {
+					position: relative;
+
+					&::after {
+						@include position(absolute, 0 0 null null);
+						@include size(100% 100%);
+
+						background-color: rgba($current-color, 0.6);
+						border-radius: rem(20);
+						content: '';
+						z-index: 2;
+					}
+				}
+			}
+		} // .front
+
+		.back {
+			left: 0;
+			transform: rotateY(-180deg);
+
+			// let's give each a background color.
+			@each $current-color in $color-list {
+
+				$i: index($color-list, $current-color);
+
+				&.back-#{$i} {
+					background-color: $current-color;
+				}
+			}
+		} // .back
+
+		// content
+		.content {
+			@include position(absolute, null null rem(15) rem(15));
+
+			width: 90%;
+			z-index: 8;
+
+			// smaller text
+			.top-title {
+				@include margin(0 0 rem(10));
+
+				display: block;
+				font-size: rem(28);
+				line-height: rem(28);
+				text-transform: uppercase;
+			} // .title
+
+			// larger text
+			.sub-title {
+				@include font(bold);
+
+				font-size: rem(38);
+				line-height: rem(38);
+				text-transform: uppercase;
+			} // .subtitle
+
+			// back content
+			.back-content {
+				@include font(bold);
+
+				font-size: rem(28);
+				line-height: rem(28);
+
+				p {
+					margin-bottom: 0;
+				} // p
+
+				a {
+					color: $color-white;
+				} // a
+			}
+		} // .content
+
+		&.flipped {
+
+			// Front
+			.front {
+				transform: rotateY(180deg);
+			} // .front
+
+			// Back
+			.back {
+				transform: rotateY(0deg);
+			} // .back
+		} // .flipped &
+	} // .flip-container
+} // .flexible-flip-cards

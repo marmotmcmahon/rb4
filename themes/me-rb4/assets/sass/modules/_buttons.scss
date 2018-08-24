@@ -1,0 +1,113 @@
+//--------------------------------------------------------------
+// Buttons
+//--------------------------------------------------------------
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"]:not(.button) {
+	@include font(bold);
+	@include margin(0);
+	@include padding($padding-button);
+	@include transition(all 0.3s ease-in-out);
+
+	appearance: none;
+	background-color: $color-sea-buckthorn;
+	border: none;
+	border-radius: rem(5);
+	color: $color-button-text;
+	line-height: 1;
+	text-transform: uppercase;
+
+
+	&:active,
+	&:focus,
+	&:hover {
+		background-color: darken($color-sea-buckthorn, 15%);
+		color: $color-white;
+	} // &:active, &:hover, &:focus
+
+	// IE 11 helper.
+	.ie & {
+		height: rem(35);
+	} // .ie &
+} // button, input[type="button"], input[type="reset"], input[type="submit"]
+
+
+//-----------------------------------------
+// Global Button Styles
+//-----------------------------------------
+.button,
+input[type="submit"].button {
+	@include font(bold);
+	@include margin(0 0 rem(25) 0);
+	@include padding(rem(15) rem(27) rem(11));
+
+	appearance: none;
+	background-color: $color-sea-buckthorn;
+	border: none;
+	border-radius: rem(5);
+	box-shadow: 0 rem(7) $color-deep-carrot-orange;
+	color: $color-button-text;
+	display: inline-block;
+	font-size: rem(15);
+	line-height: 1;
+	min-width: rem(150);
+	position: relative;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+
+	// covers buttons with links inside them
+	a {
+		color: $color-white;
+	} // a
+
+	&:visited {
+		color: $color-button-text;
+	} // &:vistied
+
+	&:active,
+	&:hover,
+	&:focus {
+		@include padding(rem(15) rem(27) rem(11));
+
+		background-color: darken($color-sea-buckthorn, 5%);
+		box-shadow: 0 rem(3) darken($color-deep-carrot-orange, 15%);
+		color: $color-white;
+		opacity: 1;
+		top: rem(3);
+	} // &:active, &:hover, &:focus
+
+	// teal button
+	&-teal {
+		background-color: $color-fountain-blue;
+		box-shadow: 0 rem(7) $color-casal;
+
+		&:active,
+		&:hover,
+		&:focus {
+			background-color: darken($color-fountain-blue, 5%);
+			box-shadow: 0 rem(3) darken($color-casal, 15%);
+		} // &:active, &:hover, &:focus
+	} // &-teal
+
+	// violet button
+	&-violet {
+		background-color: $color-butterfly-blush;
+		box-shadow: 0 rem(7) $color-cherry-pie;
+
+		&:active,
+		&:hover,
+		&:focus {
+			background-color: darken($color-butterfly-blush, 5%);
+			box-shadow: 0 rem(3) darken($color-cherry-pie, 15%);
+		} // &:active, &:hover, &:focus
+	} // &-violet
+
+	// remove outline focus state
+	&:active,
+	&:focus {
+		outline: none;
+	} // focus
+} // .button

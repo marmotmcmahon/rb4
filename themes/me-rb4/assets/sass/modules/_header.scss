@@ -1,0 +1,373 @@
+//--------------------------------------------------------------
+// Header
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Front-page Seasonal Messages
+//-----------------------------------------
+.main-page-seasonal-messages {
+	@include clearfix;
+	@include padding(rem(15) rem(15) 0);
+
+	display: inline-block;
+	width: 100%;
+
+	@include media($tablet-landscape) {
+		flex-direction: row;
+	}
+
+	// Left/Right Blocks
+	.seasonal-left,
+	.seasonal-right {
+		@include transition(all 0.3s ease-in-out);
+
+		opacity: 0;
+		visibility: hidden;
+
+		body.ready & {
+			opacity: 1;
+			visibility: visible;
+		} // body.ready
+
+		// individual elements
+		.seasonal-message {
+			@include padding(rem(25));
+
+			border-radius: rem(15);
+			box-sizing: border-box;
+			color: $color-white;
+			position: relative;
+			vertical-align: bottom;
+			width: 100%;
+
+			@include media($tablet-landscape) {
+				@include padding(rem(45));
+
+				width: auto;
+			}
+			// Transparent overlay (optional).
+			&::after {
+				@include position(absolute, 0 0 null null);
+				@include size(100% 100%);
+
+				border-radius: rem(15);
+				content: "";
+				z-index: 2;
+			} // &:after
+
+			// float to bottom containers
+			.float-to-bottom {
+				@include position(relative, null null null null);
+
+				z-index: 8;
+
+				@include media($tablet-landscape) {
+					@include position(absolute, null null rem(50) null);
+
+					width: calc(100% - 100px);
+
+					&.right {
+						left: auto;
+						right: rem(50);
+					} // &.right
+
+					&.left {
+						left: rem(50);
+						right: auto;
+					} // &.left
+				}
+			} // .float-to-bottom
+
+			// titles
+			h2 {
+				color: $color-white;
+				font-size: rem(36);
+				line-height: rem(42);
+				margin-bottom: rem(16);
+
+				@include media($tablet-portrait) {
+					font-size: rem(42);
+					line-height: rem(48);
+				}
+
+				&.large {
+					font-size: rem(36);
+					line-height: rem(42);
+
+					@include media($tablet-portrait) {
+						font-size: rem(56);
+						line-height: rem(62);
+					}
+				} // &.large
+			} // h2
+
+			a {
+				color: $color-white;
+				text-decoration: none;
+
+				&:active,
+				&:hover,
+				&:focus {
+					opacity: 1;
+				} // &:active, &:hover, &:focus
+			} // a
+
+			p {
+				@include margin(0);
+			} // p
+
+			.seasonal-content {
+				position: relative;
+				z-index: 10;
+			} // .seasonal-content
+
+			// large message
+			&.message-large {
+				@include font(regular);
+
+				background-color: $color-butterfly-blush;
+				display: inline-block;
+				font-size: rem(22);
+				line-height: rem(28);
+				text-align: right;
+				width: 100%;
+
+				@include media($tablet-landscape) {
+					@include font(bold);
+
+					font-size: rem(31);
+					height: rem(720);
+					line-height: rem(44);
+				}
+
+				// Transparent overlay (optional).
+				&::after {
+					background-color: rgba($color-butterfly-blush, 0.6);
+				} // &::after
+			} // &-.message-large
+
+			// medium message
+			&.message-medium {
+				@include font(bold);
+				@include margin(rem(15) 0);
+
+				background-color: $color-sea-buckthorn;
+				display: inline-block;
+				text-align: left;
+				width: 100%;
+
+				@include media($tablet-landscape) {
+					@include margin(0 0 rem(15) 0);
+
+					height: rem(500);
+				}
+
+				// Transparent overlay (optional).
+				&::after {
+					background-color: rgba($color-sea-buckthorn, 0.6);
+				} // &::after
+
+				a {
+					font-size: rem(24);
+
+					&:active,
+					&:hover,
+					&:focus {
+						opacity: 1;
+					} // &:active, &:hover, &:focus
+				} // a
+			} // &-.message-large
+
+			// small message
+			&.message-small {
+				@include font(bold);
+
+				background-color: $color-fountain-blue;
+				display: inline-block;
+				font-size: rem(28);
+				line-height: rem(32);
+				width: 100%;
+
+				@include media($tablet-landscape) {
+					display: table;
+					font-size: rem(20);
+					height: rem(205);
+					line-height: rem(24);
+				}
+
+				@include media($desktop) {
+					font-size: rem(24);
+					line-height: rem(32);
+				}
+
+				& > div {
+					display: table-cell;
+					position: relative;
+					vertical-align: middle;
+					z-index: 10;
+				} // .seasonal-content
+			} // &-.message-small
+		} // .seasonal-message
+	} // .seasonal-left, .seasonal-right
+
+	// left section
+	.seasonal-left {
+		@include fill-parent;
+
+		@include media($tablet-landscape) {
+			@include span-columns(8);
+
+			display: inline-block;
+		}
+	} // .seasonal-left
+
+	.seasonal-right {
+		@include fill-parent;
+
+		font-size: rem(22);
+
+		@include media($tablet-landscape) {
+			@include span-columns(4);
+
+			display: inline-block;
+		}
+	} // .seasonal-right
+} // .main-page-seasonal-messages
+
+
+//-----------------------------------------
+// Container
+//-----------------------------------------
+.site-header {
+	background-color: $color-gallery;
+	border-bottom: rem(4) solid $color-fountain-blue;
+	border-top: rem(10) solid $color-butterfly-blush;
+
+	body.home & {
+		border-bottom: rem(1) solid $color-mercury;
+		border-top: none;
+	}
+
+	body:not(.home) & {
+
+		@include media($tablet-landscape) {
+			@include position(fixed, 0 null null 0);
+
+			width: 100%;
+			z-index: 1000;
+		}
+	}
+
+	body.admin-bar:not(.home) & {
+
+		@include media($tablet-landscape) {
+			margin-top: rem(32);
+		}
+	}
+
+
+	// wrapper
+	.padded-wrap {
+		padding-bottom: rem(20);
+		padding-top: rem(20);
+		position: relative;
+	} // .padded-wrap
+
+	// Site Title
+	.site-title {
+		font-size: rem(48);
+	} // .site-title
+
+	// Logo
+	.site-branding {
+		@include margin(0);
+		@include position(relative 0 0 0 0);
+		@include size(rem(40) rem(54));
+
+		display: flex;
+		float: left;
+		z-index: 11;
+
+		@include media($tablet-landscape) {
+			@include position(absolute, rem(20) null null rem(15));
+		}
+
+		@include media($tablet-large) {
+			@include position(absolute, rem(20) null null rem(50));
+		}
+
+		@include media($tablet-large) {
+			@include size(rem(58) rem(76));
+		}
+
+		@include media($desktop) {
+			@include size(rem(157) rem(76));
+		}
+
+		// links
+		a {
+			@include size(rem(40) rem(54));
+			@include transition(all 0.3s ease-in-out);
+
+			display: inline-block;
+			overflow: hidden;
+
+			@include media($tablet-large) {
+				@include size(rem(58) rem(76));
+			}
+
+			@include media($desktop) {
+				@include size(rem(157) rem(76));
+			}
+
+			// icon svg
+			.icon-logo {
+				@include size(rem(110) rem(54));
+
+				@include media($tablet-large) {
+					@include size(rem(157) rem(76));
+				}
+			} // svg
+		} // a
+	} // .site-branding
+} // .site-header
+
+
+//-----------------------------------------
+// Page header Image
+//-----------------------------------------
+.header-image {
+	@include transition(opacity 0.2s ease-in-out);
+
+	border-bottom: rem(4) solid $color-fountain-blue;
+	opacity: 0;
+	position: relative;
+	visibility: hidden;
+
+	body.ready & {
+		opacity: 1;
+		visibility: visible;
+	} // body.ready &
+
+	img {
+		height: auto;
+		vertical-align: bottom;
+		width: 100%;
+
+		&.mobile {
+			display: block;
+
+			@include media($tablet-portrait) {
+				display: none;
+			}
+		} // &.mobile
+
+		&.desktop {
+			display: none;
+
+			@include media($tablet-portrait) {
+				display: block;
+			}
+		} // &.desktop
+	} // img
+} // .header_image

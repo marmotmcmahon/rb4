@@ -1,0 +1,121 @@
+//--------------------------------------------------------------
+// HTML Elements
+//--------------------------------------------------------------
+
+//--------------------------------------------------------------
+// Fixed Header Tweaks
+//--------------------------------------------------------------
+body:not(.home) {
+
+	@include media($tablet-landscape) {
+		margin-top: rem(108);
+	}
+
+	@include media($tablet-large) {
+		margin-top: rem(130);
+	}
+
+	&.page-parent {
+
+		@include media($tablet-landscape) {
+			margin-top: rem(145);
+		}
+
+		@include media($tablet-large) {
+			margin-top: rem(167);
+		}
+	}
+} // body
+
+body.admin-bar:not(.home) {
+
+	@include media($tablet-landscape) {
+		margin-top: rem(145);
+	}
+
+	@include media($tablet-large) {
+		margin-top: rem(167);
+	}
+}
+
+
+//--------------------------------------------------------------
+// Iframes
+//--------------------------------------------------------------
+
+embed,
+iframe,
+object {
+	max-width: 100%;
+} // embed, iframe, object
+
+hr {
+	@include size(auto 1px);
+
+	background-color: $color-background-hr;
+	border: 0;
+	margin: 0 0 rem(24) 0;
+} // hr
+
+figure {
+	margin: 0;
+} // figure
+
+//--------------------------------------------------------------
+// Lists
+//--------------------------------------------------------------
+
+ul,
+ol {
+	margin: 0 0 rem(24) rem(24);
+} // ul, ol
+
+ul {
+	list-style: disc;
+} // ul
+
+ol {
+	list-style: decimal;
+} // ol
+
+li > ul,
+li > ol {
+	margin: 0 0 0 rem(24);
+} // li > ul, li > ol
+
+dt {
+	font-weight: 700;
+} // dt
+
+dd {
+	margin: 0 rem(24) rem(24) 0;
+} // dd
+
+//--------------------------------------------------------------
+// Tables
+//--------------------------------------------------------------
+
+table {
+	@include size(100% auto);
+
+	margin: 0 0 rem(24) 0;
+} // table
+
+th {
+	font-weight: 700;
+} // th
+
+//-----------------------------------------
+// Links
+//-----------------------------------------
+.entry-footer {
+	display: block;
+	margin-top: rem(25);
+
+	.cat-links,
+	.edit-links,
+	.tag-links {
+		display: inline-block;
+		margin-right: 15px;
+	} // .cat-links, .edit-links, .tag-links
+} // .entry-footer

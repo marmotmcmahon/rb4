@@ -1,0 +1,83 @@
+//--------------------------------------------------------------
+// wpStickies Custom CSS (vs using the custom css input)
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Spot
+//-----------------------------------------
+.wps-sticky {
+	background-color: $color-fountain-blue;
+	background-image: none !important;
+	border: rem(5) solid rgba($color-white, 0.5);
+	border-radius: rem(50);
+	height: rem(26) !important;
+	width: rem(26) !important;
+} // .wps-sticky
+
+
+//-----------------------------------------
+// Disable Box Fix
+//-----------------------------------------
+.wps-disabledbox {
+	right: rem(20) !important;
+} // .wps-disabledbox
+
+
+//-----------------------------------------
+// Sticky
+//-----------------------------------------
+.wps-spotbubble {
+
+	.wps-spottitle,
+	.wps-spotcontent {
+		@include font(medium);
+
+		color: $color-white !important;
+		font-size: rem(18) !important;
+		text-align: left !important;
+	} // .wps-spottitle, .wps-spotcontent
+
+	.wps-spotbubble-bg {
+		background: $color-fountain-blue !important;
+	} // .wps-spotbubble-bg
+
+	.wps-spottitleeditable,
+	.wps-spotcontenteditable,
+	.wps-urls,
+	.wps-urleditable,
+	.wps-spoturleditable {
+		width: 100% !important;
+	} // .wps-spottitleeditable, .wps-spotcontenteditable, .wps-urls, .wps-spoturleditable
+} // .wps-spotbubble
+
+
+//-----------------------------------------
+// Sticky Arrow
+//-----------------------------------------
+.wps-spotarrow {
+
+	// Left
+	.wps-forceleft &,
+	.wps-left & {
+		border-left: rem(7) solid $color-fountain-blue !important;
+	} // .wps-left &
+
+	// right
+	.wps-foreceright &,
+	.wps-right & {
+		border-right: rem(7) solid $color-fountain-blue !important;
+	} // .wps-right &
+
+	// Left
+	.wps-bottom &,
+	.wps-forcebottom & {
+		border-bottom: rem(7) solid $color-fountain-blue !important;
+	} // .wps-forcebottom &
+
+	// Left
+	.wps-forcetop &,
+	.wps-top & {
+		border-top: rem(7) solid $color-fountain-blue !important;
+	} // .wps-forcetop &, .wps-top &
+
+} // .wps-spotarrow

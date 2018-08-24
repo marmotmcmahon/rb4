@@ -1,0 +1,85 @@
+//--------------------------------------------------------------
+// Base Layout
+//--------------------------------------------------------------
+
+// Structure.
+.wrap {
+	@include outer-container;
+
+	@include padding(0 rem(15));
+
+	@include media($tablet-large) {
+		padding: 0;
+	}
+} // .wrap
+
+// wrapper with padding — full width
+.padded-wrap {
+	@include clearfix;
+	@include padding(0 rem(15));
+
+	@include media($tablet-large) {
+		@include padding(0 rem(50));
+	}
+} // .padded-wrap
+
+.site-content {
+	@include margin(rem(15) auto);
+
+	body.home & {
+		@include margin(0 auto);
+	} // body.home &
+} // .site-content
+
+.primary {
+	@include fill-parent;
+
+	@include media($tablet-landscape) {
+		@include margin(rem(33) 0 0);
+		@include span-columns(7);
+
+		body.single & {
+			@include margin(rem(33) 0);
+		} // body.single &
+	}
+} // .primary
+
+.secondary {
+	@include fill-parent;
+
+	margin-top: rem(15);
+
+	@include media($tablet-landscape) {
+		@include span-columns(4.7);
+
+		float: right;
+	}
+} // .secondary
+
+
+//-----------------------------------------
+// Full-width class to break element out of .wrap
+//-----------------------------------------
+.full-width {
+	@include margin(null -50vw null -50vw);
+	@include position(relative, null 50% null 50%);
+	@include transition(opacity 0.3s ease-in);
+
+	opacity: 0;
+	visibility: hidden;
+	width: 100vw;
+
+	// On pages with 2 columns (not full-width);
+	.primary & {
+		@include margin(0 0 0 0);
+		@include position(relative, auto auto auto auto);
+
+		width: 100vw;
+	} // .primary &
+
+	// window readoy.
+	body.ready & {
+		opacity: 1;
+		visibility: visible;
+	}
+} // .full-width

@@ -1,0 +1,195 @@
+//--------------------------------------------------------------
+// Related Resources Widget
+//--------------------------------------------------------------
+.rb4-related-resources-related {
+	background-color: $color-fountain-blue;
+	color: $color-white;
+
+	a {
+		color: $color-white;
+		font-weight: bold;
+	} // a
+
+	strong {
+		color: darken($color-casal, 60%);
+	} // strong
+
+	h4 {
+		color: $color-cherry-pie;
+	}
+
+	// title
+	.widget-title {
+		color: $color-cherry-pie;
+
+		a {
+			color: $color-cherry-pie;
+		} // a
+	} // .wiget-title
+
+	body.page-kids-0-2 & {
+		background-color: $color-sea-buckthorn;
+		color: $color-white;
+
+		a {
+			color: $color-white;
+			font-weight: bold;
+		} // a
+
+		strong {
+			color: darken($color-deep-carrot-orange, 60%);
+		} // strong
+
+		h4 {
+			color: $color-cherry-pie;
+		}
+
+		// title
+		.widget-title {
+			color: $color-cherry-pie;
+
+			&::after {
+				content: 'FAMILY RESOURCES';
+			} // &::after
+
+			a {
+				color: $color-cherry-pie;
+			} // a
+		} // .wiget-title
+	} // body.page-kids-0-2 &
+
+	body.page-kids-3-4 & {
+		background-color: $color-wattle;
+		color: darken($color-wattle, 40%);
+
+		a {
+			color: $color-cherry-pie;
+			font-weight: bold;
+		} // a
+
+		h4 {
+			color: $color-butterfly-blush;
+		}
+
+		strong {
+			color: darken($color-wattle, 70%);
+		} // strong
+
+		// title
+		.widget-title {
+			color: $color-butterfly-blush;
+
+			&::after {
+				content: 'FAMILY RESOURCES';
+			} // &::after
+
+			a {
+				color: $color-butterfly-blush;
+			} // a
+		} // .wiget-title
+	} // body.page-kids-3-4 &
+
+	body.page-kids-5-9 & {
+		background-color: $color-butterfly-blush;
+		color: lighten($color-butterfly-blush, 35%);
+
+		a {
+			color: $color-white;
+			font-weight: bold;
+		} // a
+
+		h4 {
+			color: $color-wattle;
+		}
+
+		strong {
+			color: darken($color-cherry-pie, 60%);
+		} // strong
+
+		// title
+		.widget-title {
+			color: $color-wattle;
+
+			&::after {
+				content: 'FAMILY RESOURCES';
+			} // &::after
+
+			a {
+				color: $color-wattle;
+			} // a
+		} // .wiget-title
+	} // body.page-kids-5-9 & 	
+
+	h4 {
+		@include font(bold);
+
+		font-size: rem(16);
+		line-height: rem(20);
+	}
+
+	// title
+	.widget-title {
+		font-size: rem(18);
+		margin-bottom: rem(30);
+		text-transform: uppercase;
+
+		&::after {
+			content: 'RESOURCES';
+			display: block;
+			font-size: rem(32);
+			line-height: rem(24);
+		} // &::after
+	} // .wiget-title
+
+	// ul
+	ul,
+	ol {
+		margin-bottom: rem(24);
+		margin-left: rem(5);
+		margin-top: rem(-15);
+
+		a {
+			text-decoration: underline;
+		} // a
+	} // ul, ol
+} // .rb4-related-resources-related
+
+
+//-----------------------------------------
+// Posts
+//-----------------------------------------
+.rb4-related-resources-related {
+
+	// Loop through headings for common styles.
+	@function headings($from: 1, $to: 6) {
+		@if $from == $to {
+			@return "h#{$from}, .h#{$from}";
+		} @else {
+			@return "h#{$from}, .h#{$from}," + headings($from + 1, $to);
+		}
+	}
+
+	// Output headings.
+	#{headings(1, 6)} {
+		font-weight: bold;
+		margin-bottom: rem(24);
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	} // #{headings(1, 6)}
+
+	// excerpt
+	p {
+		font-size: rem(16);
+
+		a {
+			text-decoration: underline;
+		} // a
+
+		// kill last p margin
+		&:last-child {
+			margin-bottom: 0;
+		} // &:last-child
+	} // p
+} // .rb4-related-resources-related

@@ -1,0 +1,540 @@
+//--------------------------------------------------------------
+// Navigation
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Links
+//-----------------------------------------
+a {
+	@include transition(opacity 0.3s ease-in-out);
+
+	color: $color-link;
+	cursor: pointer;
+	text-decoration: none;
+
+	&:visited {
+		color: $color-link-visited;
+	} // &:visited
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: $color-link-hover;
+		opacity: 0.8;
+	} // &:hover, &:focus, &:active
+} // a
+
+
+//-----------------------------------------
+// Global Menu
+//-----------------------------------------
+// Default menu (active after a fresh WordPress install)
+.menu {
+	@include list-reset;
+
+	// Menu hyperlinks
+	a {
+		display: block;
+		text-decoration: none;
+	} // a
+
+	// Current items
+	.current_page_item a,
+	.current-menu-item a {
+		@include font(bold);
+
+		background-color: $color-casal;
+		color: $color-white;
+
+		@include media($tablet-landscape) {
+			background-color: transparent;
+			color: $color-fountain-blue;
+		}
+
+		&.menu-item-has-children {
+
+			// dropdown hide
+			.sub-menu {
+				display: none;
+			} // .sub-menu
+		} // &.menu-item-has-children
+	} // .current_page_item a, .current-menu-item a
+
+	// Current items
+	.current_page_item,
+	.current-menu-item {
+
+		&.menu-item-has-children {
+
+			// show dropdown on hover
+			&:hover > .sub-menu {
+
+				@include media($tablet-landscape) {
+					display: none;
+				}
+			} // &:hover + ul
+		} // &.menu-item-has-children
+	} // .current_page_item, .current-menu-item
+} // .menu
+
+
+//-----------------------------------------
+// Main navigation
+//-----------------------------------------
+.main-navigation {
+	@include transition(all 0.5s ease-in-out);
+
+	display: inline-block;
+	float: right;
+	max-height: 0;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+
+	@include media($tablet-landscape) {
+		max-height: rem(5000);
+		overflow: visible;
+		padding-left: rem(70);
+	}
+
+	@include media($tablet-large) {
+		padding-left: rem(108);
+	}
+
+	@include media($desktop) {
+		padding-left: rem(250);
+	}
+
+	&.is-open {
+		max-height: rem(5000);
+	} // &.is-open
+
+	ul {
+		@include list-reset;
+		@include margin(0);
+		@include size(100% auto);
+
+		line-height: 1.25;
+
+		@include media($tablet-landscape) {
+			@include size(100% rem(54));
+
+			align-content: stretch;
+			align-items: center;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+
+		@include media($tablet-large) {
+			@include size(100% rem(76));
+		}
+
+		@include media($desktop) {
+			@include size(100% rem(76));
+		}
+
+		li {
+			align-items: center;
+			display: flex;
+			flex: 1 1 auto;
+			flex-direction: column;
+			height: 100%;
+			margin-bottom: rem(5);
+			position: relative;
+			width: 100%;
+
+			@include media($tablet-landscape) {
+				flex-direction: inherit;
+				margin-bottom: 0;
+				width: auto;
+			}
+
+			&:first-child {
+				margin-top: rem(15);
+
+				@include media($tablet-landscape) {
+					margin-top: 0;
+				}
+			} // &:first-child
+
+			a {
+				@include font(medium);
+				@include padding(rem(11) rem(10) rem(9));
+
+				background-color: $color-butterfly-blush;
+				border-radius: rem(5);
+				color: $color-white;
+				display: inline-block;
+				font-size: rem(18);
+				height: auto;
+				text-align: center;
+				text-transform: uppercase;
+				width: 100%;
+
+				@include media($tablet-landscape) {
+					@include padding(0);
+
+					background-color: transparent;
+					border-radius: 0;
+					color: $color-butterfly-blush;
+					width: auto;
+				}
+			} // a
+
+			&.button {
+				align-items: center;
+				background-color: $color-fountain-blue;
+				box-shadow: 0 rem(7) $color-casal;
+				color: $color-white;
+				height: auto;
+				justify-content: center;
+				margin-bottom: rem(10);
+				text-align: center;
+
+				@include media($tablet-landscape) {
+					margin-bottom: rem(4);
+				}
+
+				&:active,
+				&:hover,
+				&:focus {
+					background-color: darken($color-fountain-blue, 5%);
+					box-shadow: 0 rem(3) darken($color-casal, 15%);
+				} // &:active, &:hover, &:focus
+
+				a {
+					color: $color-white;
+					padding: 0;
+					background-color: transparent;
+				}
+			} // &.button
+
+			&.menu-item-has-children {
+
+				// dropdowns
+				.sub-menu {
+					@include list-reset;
+
+					display: inline-block;
+					position: relative;
+					width: 100%;
+					z-index: 50;
+
+					@include media($tablet-landscape) {
+						@include padding(0);
+						@include position(absolute, rem(55) null null 0);
+						@include size(rem(225) auto);
+
+						background-color: $color-silver;
+						display: none;
+					}
+
+					@include media($tablet-large) {
+						@include position(absolute, rem(75) null null 0);
+					}
+
+					&::before {
+						display: none;
+
+						@include media($tablet-landscape) {
+							@include position(absolute, null null 100% rem(13));
+							@include size(0 0);
+
+							border-color: transparent transparent $color-alto transparent;
+							border-style: solid;
+							border-width: 0 rem(18) rem(16) rem(18);
+							content: "";
+							display: block;
+						}
+					} // &::before
+
+					li {
+						@include margin(rem(5) 0);
+						@include padding(rem(8));
+						@include transition(all 0.3s ease-in-out);
+
+						background-color: $color-alto;
+						border-radius: rem(5);
+						display: flex;
+						flex: 1 1 auto;
+						text-align: center;
+						width: auto;
+
+						&:last-of-type {
+							margin-bottom: 0;
+						} // &:last-of-type
+
+						@include media($tablet-landscape) {
+							@include margin(0);
+							@include padding(rem(8) rem(25));
+
+							border-radius: 0;
+							display: inline-block;
+							text-align: left;
+							width: 100%;
+
+							&:first-child {
+								@include padding(rem(25) rem(25) rem(8));
+							} // &:first-child
+
+							&:last-child {
+								@include padding(rem(8) rem(25) rem(25));
+							} // &:first-child
+
+							&:only-child {
+								@include padding(rem(25));
+							} // &:only-child
+						}
+
+						a {
+							@include font(regular);
+							@include padding(0);
+							@include size(100% auto);
+
+							background-color: transparent;
+							border-radius: 0;
+							color: $color-butterfly-blush;
+							text-align: center;
+							text-transform: capitalize;
+
+							@include media($tablet-landscape) {
+								text-align: left;
+							}
+						} // a
+					} // li
+
+					&.is-open {
+						max-height: rem(5000);
+					} // &.is-open
+				} // ul
+
+				// show dropdown on hover
+				&:hover > .sub-menu {
+
+					@include media($tablet-landscape) {
+						display: block;
+					}
+				} // &:hover + ul
+			} // .menu-item-has-children
+		} // li
+	} // ul
+} // .main-navigation
+
+
+//-----------------------------------------
+// Menu Toggle
+//-----------------------------------------
+.menu-button {
+	@include margin(0);
+	@include padding(0);
+	@include position(relative, rem(12) null null null);
+
+	background-color: transparent;
+	border: 0;
+	display: block;
+	float: right;
+	outline: none;
+
+	@include media($tablet-landscape) {
+		display: none;
+	}
+
+	&:hover {
+		background-color: transparent;
+	} // &:hover
+
+	&:active,
+	&:focus {
+		background-color: transparent;
+		box-shadow: none;
+	} // &:focus
+
+	.burger-icon {
+		@include burger(rem(30), rem(4), rem(6), $color-butterfly-blush);
+
+		border-radius: rem(5);
+
+		&::after,
+		&::before {
+			border-radius: rem(5);
+		} // after/before
+	}
+
+	&.is-active .burger-icon {
+		@include burger-to-cross;
+	} // &.is-active .burger-icon
+} // .menu-button
+
+
+//-----------------------------------------
+// Post Navigations
+//-----------------------------------------
+// Navigation on Comment, Post and Posts
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+
+	.site-main & {
+		margin: 0 0 rem(24) 0;
+		overflow: hidden;
+	} // .site-main &
+} // .comment-navigation, .posts-navigation, .post-navigation
+
+
+//-----------------------------------------
+// Prev/Next Navigation
+//-----------------------------------------
+.nav-links {
+
+	.nav-previous,
+	.nav-next {
+		@include font(bold);
+		@include margin(0 0 rem(7) 0);
+		@include padding(rem(15) rem(27) rem(11));
+		@include transition(all 0.3s ease-in-out);
+
+		background-color: $color-sea-buckthorn;
+		border-radius: rem(5);
+		box-shadow: 0 rem(7) $color-deep-carrot-orange;
+		color: $color-button-text;
+		display: inline-block;
+		font-size: rem(15);
+		line-height: 1;
+		text-decoration: none;
+		text-transform: uppercase;
+
+		// covers buttons with links inside them
+		a {
+			color: $color-white;
+		} // a
+
+		&:visited {
+			color: $color-button-text;
+		} // &:vistied
+
+		&:active,
+		&:hover,
+		&:focus {
+			@include margin(0 0 rem(3) 0);
+			@include padding(rem(17) rem(27) rem(13));
+
+			background-color: darken($color-sea-buckthorn, 5%);
+			box-shadow: 0 rem(3) darken($color-deep-carrot-orange, 15%);
+			opacity: 1;
+		} // &:active, &:hover, &:focus
+	} // .nav-previous, .nav-next
+
+	.nav-previous {
+		float: left;
+	} // .nav-previous
+
+	.nav-next {
+		float: right;
+	} // .nav-next
+} // .nav-links
+
+
+//-----------------------------------------
+// Secondary Navigation
+//-----------------------------------------
+.menu-secondary-menu-container {
+	background-color: $color-butterfly-blush;
+	border-bottom: rem(1) solid $color-cherry-pie;
+
+	ul {
+		@include padding(0 rem(15));
+
+		text-align: center;
+
+		@include media($phone-landscape) {
+			text-align: right;
+		}
+
+		@include media($tablet-large) {
+			@include padding(0 rem(50));
+		}
+
+		li {
+			display: inline-block;
+			margin-left: rem(10);
+
+			@include media($tablet-portrait) {
+				margin-left: rem(15);
+			}
+
+			&:first-child {
+				margin-left: 0;
+			} // &:first-child
+
+			a {
+				color: $color-white;
+				display: inline-block;
+				font-size: rem(16);
+				padding-bottom: rem(2);
+				padding-top: rem(8);
+
+				@include media($tablet-portrait) {
+					padding-top: rem(5);
+				}
+			} // a
+		} // li
+	} // ul
+} // .menu-secondary-container
+
+//-----------------------------------------
+// Child Navigation
+//-----------------------------------------
+.page-child-nav {
+
+	ul {
+		@include list-reset;
+		@include padding(rem(7) rem(15) rem(3));
+
+		background-color: $color-fountain-blue;
+		border-top: rem(1) solid darken($color-mercury, 3.5%);
+
+		@include media($tablet-landscape) {
+			padding-left: rem(70) + rem(50);
+			padding-right: rem(50);
+		}
+
+		body.home & {
+
+			@include media($tablet-large) {
+				padding-left: rem(108) + rem(50);
+			}
+
+			@include media($desktop) {
+				padding-left: rem(197) + rem(50);
+			}
+		} // body.home &
+
+		li {
+			display: inline-block;
+			margin-right: rem(20);
+
+			&:last-child {
+				margin-right: 0;
+			} // &:last-child
+
+			&.header {
+				text-transform: uppercase;
+			}
+
+			// Current items
+			&.current_page_item a,
+			&.current-menu-item a {
+				@include font(bold);
+
+				color: $color-white;
+			} // .current_page_item a, .current-menu-item a
+
+			a {
+				@include font(medium);
+
+				color: $color-white;
+			} // a
+		} // li
+	} // ul
+} // .page-child-nav

@@ -1,0 +1,97 @@
+//--------------------------------------------------------------
+// Sidebar
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Widgets
+//-----------------------------------------
+.widget {
+	@include margin(0 0 rem(15));
+	@include padding(rem(30));
+
+	background-color: $color-silver;
+	border-radius: rem(15);
+
+	&:last-child {
+		@include margin(0);
+	} // &:last-child
+
+	// search widget
+	&.widget_search {
+
+		// form
+		.search-form {
+			@include margin(0);
+		} // .search-form
+	} // &.widget_search
+
+	// Make sure select elements fit in widgets.
+	select {
+		max-width: 100%;
+	} // select
+
+	ul,
+	ol {
+
+		.sub-menu {
+			@include margin(0 0 0 rem(20));
+			@include padding(0 0 0 rem(10));
+
+			color: $color-cherry-pie;
+			list-style-type: circle;
+		}
+	} // ul, ol
+} // .widget
+
+// Search widget.
+.widget_search .search-submit {
+	display: none;
+} // .widget_search .search-submit
+
+
+//-----------------------------------------
+// Main WP Widget UL/OL Styles
+//-----------------------------------------
+.widget_archive,
+.widget_categories,
+.widget_meta,
+.widget_pages,
+.widget_recent_comments {
+
+	ul,
+	ol {
+		@include margin(0 0 0 rem(20));
+		@include padding(0 0 0 rem(10));
+
+		color: $color-cherry-pie;
+		list-style-type: circle;
+	} // ul, ol
+} // .widget_archive, .widget_categories, .widget_meta, .widget_pages, .widget_recent_comments
+
+
+//-----------------------------------------
+// Recent Entries
+//-----------------------------------------
+.widget_recent_entries {
+
+	ul,
+	ol {
+		@include list-reset;
+
+		li {
+			line-height: 1.125;
+			margin-bottom: rem(15);
+
+			&:last-child {
+				margin-bottom: 0;
+			} // &://last-child
+		} // li
+	} // ul, ol
+
+	// date/time <span>
+	.post-date {
+		display: block;
+		font-size: rem(12);
+		margin-top: rem(7);
+	} // .post-date
+} // .widget_recent_entries

@@ -1,0 +1,530 @@
+//--------------------------------------------------------------
+// Homepage Template
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Flip Cards
+//-----------------------------------------
+.flip-cards {
+	@include clearfix;
+	@include padding(rem(50) 0);
+
+	@include media($tablet-portrait) {
+		@include padding(rem(100) 0);
+	}
+
+	// h2
+	.title {
+		@include margin(0 0 rem(50));
+
+		color: $color-sea-buckthorn;
+		text-align: center;
+	} // .title
+
+	.card-container {
+		@include list-reset;
+
+		align-items: stretch;
+		display: flex;
+		flex-flow: column wrap;
+		justify-content: space-around;
+
+		@include media($tablet-portrait) {
+			flex-flow: row wrap;
+		}
+	} // .card-container
+
+	.flip-container {
+		@include clearfix;
+		@include fill-parent;
+		@include padding(0);
+		@include margin(0 0 2.5% 0);
+		@include transition(all 0.2s linear);
+
+		display: flex;
+		height: rem(275);
+		perspective: 900px;
+
+		@include media($tablet-portrait) {
+			@include margin(0 2.5% 2.5% 0);
+
+			width: 48.75%;
+
+			&:nth-child(2) {
+				@include margin(0);
+			} // &:nth-child(2)
+
+			&:nth-child(4){
+				@include margin(0);
+			} // &:nth-child(4)
+		}
+
+		@include media($tablet-landscape) {
+			width: 23.125%;
+
+			&:nth-child(2) {
+				@include margin(0 2.5% 0 0);
+			} // &:nth-child(2)
+
+			&:nth-child(4){
+				@include margin(0);
+			} // &:nth-child(4)
+		}
+
+		.front,
+		.back {
+			@include padding(rem(15));
+			@include position(absolute, 0 null null 0);
+			@include transition(all 0.3s);
+
+			backface-visibility: hidden;
+			border-radius: rem(20);
+			color: $color-white;
+			min-height: 100%;
+			text-align: left;
+			transform-style: preserve3d;
+			width: 100%;
+			z-index: 8;
+		} // .front, .back
+
+		$color-list: $color-fountain-blue $color-sea-buckthorn $color-wattle $color-butterfly-blush;
+
+		// front
+		.front {
+			transform: rotateY(0deg);
+
+			// let's give each an overlay.
+			@each $current-color in $color-list {
+
+				$i: index($color-list, $current-color);
+
+				&.front-#{$i} {
+					position: relative;
+
+					&::after {
+						@include position(absolute, 0 0 null null);
+						@include size(100% 100%);
+
+						background-color: rgba($current-color, 0.6);
+						border-radius: rem(20);
+						content: '';
+						z-index: 2;
+					}
+				}
+			}
+		} // .front
+
+		.back {
+			transform: rotateY(-180deg);
+
+			// let's give each a background color.
+			@each $current-color in $color-list {
+
+				$i: index($color-list, $current-color);
+
+				&.back-#{$i} {
+					background-color: $current-color;
+				}
+			}
+
+			// Link
+			a.back-link {
+				@include position( absolute, 0 null null 0 );
+				@include size(100%);
+
+				z-index: 10;
+			} // a.back-link
+		} // .back
+
+		// content
+		.content {
+			@include position(absolute, null null rem(15) rem(15));
+
+			width: 90%;
+			z-index: 8;
+
+			// smaller text
+			.top-title {
+				@include margin(0 0 rem(10));
+
+				display: block;
+				font-size: rem(28);
+				line-height: rem(28);
+				text-transform: uppercase;
+			} // .title
+
+			// larger text
+			.sub-title {
+				@include font(bold);
+
+				font-size: rem(38);
+				line-height: rem(38);
+				text-transform: uppercase;
+			} // .subtitle
+
+			// back content
+			.back-content {
+				@include font(bold);
+
+				font-size: rem(28);
+				line-height: rem(28);
+
+				p {
+					margin-bottom: 0;
+				} // p
+
+				a {
+					color: $color-white;
+				} // a
+			}
+		} // .content
+
+		&.flipped {
+
+			// Front
+			.front {
+				transform: rotateY(180deg);
+			} // .front
+
+			// Back
+			.back {
+				transform: rotateY(0deg);
+			} // .back
+		} // .flipped &
+	} // .flip-container
+} // .flip-cards
+
+
+//-----------------------------------------
+// Image Map
+//-----------------------------------------
+.learning-map {
+	position: relative;
+
+	// Transparent overlay (optional).
+	&::after {
+		@include position(absolute, 0 0 null null);
+		@include size(100% 100%);
+
+		background: transparent;
+		content: '';
+		z-index: 2;
+
+		@include media($tablet-landscape) {
+			background: linear-gradient(to bottom, rgba($color-cherry-pie, 0.8) 0% , rgba($color-cherry-pie, 0) 70%);
+		}
+	} // &:after
+
+	// content
+	.image-map-content {
+		@include padding(rem(30) 0);
+
+		background-color: $color-cherry-pie;
+		color: $color-white;
+		display: block;
+		font-size: rem(18);
+		line-height: rem(18);
+		max-width: 100%;
+
+		@include media($tablet-portrait) {
+			font-size: rem(28);
+			line-height: rem(28);
+		}
+
+		@include media($tablet-landscape) {
+			@include padding(0);
+			@include position(absolute, rem(70) null null rem(70));
+
+			background-color: transparent;
+			max-width: rem(400);
+			z-index: 10;
+		}
+
+		h2,
+		h3 {
+			color: $color-white;
+			font-size: rem(36);
+			line-height: rem(36);
+
+			@include media($tablet-portrait) {
+				font-size: rem(56);
+				line-height: rem(56);
+			}
+		} // h2, h3
+
+		p {
+			margin-bottom: 0;
+		} // p
+
+		// links
+		a {
+			color: $color-white;
+		} // a
+	} // .image-map-content
+
+	// image map
+	.image-map {
+		width: 100%;
+	} // .image-map
+} // .learning-map
+
+
+//-----------------------------------------
+// Resources-block
+//-----------------------------------------
+.resources-block {
+	@include clearfix;
+	@include padding(rem(35) 0);
+
+	@include media($tablet-portrait) {
+		@include padding(rem(70) 0);
+	}
+
+	// Start Resources also <wrap>
+	.resources {
+		height: auto;
+		margin: 0 auto;
+		padding: 0;
+
+		@include media($tablet-landscape) {
+			align-items: stretch;
+			display: flex;
+			flex-direction: row;
+			height: rem(728);
+		}
+
+		// 3 columns.
+		.col-1,
+		.col-2,
+		.col-3 {
+			display: inline-block;
+			float: left;
+
+			a.button {
+				margin-bottom: 0;
+			}
+
+			& > div {
+				@include padding(rem(20));
+
+				background: $color-sea-buckthorn;
+				border-radius: rem(20);
+				color: $color-white;
+				display: flex;
+				flex-direction: column;
+				height: auto;
+				justify-content: center;
+				position: relative;
+
+				@include media($tablet-portrait) {
+					height: rem(364);
+				}
+
+				@include media($tablet-landscape) {
+					height: auto;
+				}
+
+				h1,
+				.h1,
+				h2,
+				.h2,
+				h3,
+				.h3,
+				h4,
+				.h4,
+				h5,
+				.h5,
+				h6,
+				.h6 {
+					@include font(bold);
+
+					color: inherit;
+					text-transform: uppercase;
+				}
+
+				// background.
+				.image-as-background {
+					@include position(absolute, 0 null null 0);
+					@include size(100%);
+
+					border-radius: rem(20);
+					opacity: 0.4;
+					z-index: 0;
+				}
+
+				// content.
+				.content {
+					font-size: rem(22);
+					line-height: rem(22);
+					position: relative;
+					z-index: 8;
+
+					p {
+
+						&:last-child {
+							margin-bottom: 0;
+						} // &:last-child
+					} // p
+				} // .content
+			} // & > div
+		} // .col-1, .col-2, .col-3
+
+		.col-1 {
+			width: 100%;
+
+			@include media($tablet-portrait) {
+				width: 50%;
+			}
+
+			@include media($tablet-landscape) {
+				flex: 1 1 auto;
+				flex-direction: column;
+				margin-right: rem(10);
+			}
+
+			& > div:nth-child(1) {
+				margin-bottom: rem(10);
+
+				@include media($tablet-portrait) {
+					margin-right: rem(10);
+				}
+
+				@include media($tablet-landscape) {
+					height: rem(356);
+					margin-right: 0;
+				}
+			}
+
+			& > div:nth-child(2) {
+				margin-bottom: rem(10);
+				margin-bottom: rem(10);
+
+				@include media($tablet-portrait) {
+					margin-right: rem(10);
+				}
+
+				@include media($tablet-landscape) {
+					height: rem(356);
+					margin-bottom: 0;
+					margin-right: 0;
+				}
+			}
+
+			& > div:nth-child(1),
+			& > div:nth-child(2) {
+				flex: 1 0 auto;
+			}
+		} // .col-1
+
+		.col-2 {
+			width: 100%;
+
+			@include media($tablet-portrait) {
+				width: 50%;
+			}
+
+			@include media($tablet-landscape) {
+				margin-bottom: 0;
+				margin-right: rem(10);
+			}
+
+			& > div:nth-child(1) {
+				margin-bottom: rem(10);
+
+				@include media($tablet-landscape) {
+					height: rem(463);
+				}
+			}
+
+			& > div:nth-child(2) {
+				margin-bottom: rem(10);
+
+				@include media($tablet-landscape) {
+					height: rem(250);
+					margin-bottom: 0;
+				}
+			}
+
+			& > div:nth-child(1),
+			& > div:nth-child(2) {
+				flex: 1 0 auto;
+			}
+		} // .col-23
+
+		.col-3 {
+			width: 100%;
+
+			& > div:nth-child(1) {
+
+				@include media($tablet-portrait) {
+					margin-right: rem(10);
+				}
+			}
+
+			& > div:nth-child(2) {
+				margin-right: 0;
+			}
+
+			& > div:nth-child(1),
+			& > div:nth-child(2) {
+				float: left;
+				margin-bottom: rem(10);
+				width: 100%;
+
+				@include media($tablet-portrait) {
+					width: calc(50% - 5px);
+				}
+
+				@include media($tablet-landscape) {
+					height: rem(200);
+				}
+			}
+
+			& > div:nth-child(3) {
+				justify-content: flex-start;
+				width: 100%;
+
+				@include media($tablet-landscape) {
+					height: rem(513);
+				}
+
+				// content
+				.content {
+					max-width: 100%;
+
+					@include media($tablet-landscape) {
+						max-width: 70%;
+					}
+				} // .content
+			}
+		} // .col-3
+	} // .resources
+} // .resources-block
+
+
+//-----------------------------------------
+// Stats Block
+//-----------------------------------------
+.stats-block {
+
+	img {
+		height: auto;
+		width: 100%;
+	} // img
+
+	.mobile {
+		display: block;
+
+		@include media($tablet-portrait) {
+			display: none;
+		}
+	} // .mobile
+
+	.desktop {
+		display: none;
+
+		@include media($tablet-portrait) {
+			display: block;
+		}
+	} // .desktop
+} // .stats-block

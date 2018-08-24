@@ -1,0 +1,39 @@
+// ------------------------------------------------------------
+// Font Stacks for Non Multi-Language and Multi-Language sites
+// ------------------------------------------------------------
+
+// This mixin can be seen in action here:
+// http://sassmeister.com/gist/51bbe6b3983f8146ed67
+
+@mixin font($fontstack) {
+
+	$ingra: (
+		//light: "ingra",
+		//ultralight:  "ingra",
+		regular: "ingra",
+		medium: "ingra",
+		bold: "ingra",
+		//extrabold: "ingra"
+	);
+
+	$weights: (
+		//light: 200,
+		//ultralight: 300,
+		regular: 400,
+		medium: 500,
+		bold: 700,
+		//extrabold: 800
+	);
+
+	$fallback: (
+		//light: normal,
+		//ultralight: normal,
+		regular: normal,
+		medium: bold,
+		bold: bold,
+		//extrabold: bold
+	);
+
+	font-family: map-get($ingra, $fontstack), sans-serif;
+	font-weight: map-get($weights, $fontstack);
+}
